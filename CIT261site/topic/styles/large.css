@@ -1,0 +1,99 @@
+/** Margin to the entire page **/
+.content{
+    margin: 2% 15% 2% 15%;
+    border: 1px solid black;
+}
+
+.form1{
+	width: 80%;
+	margin: auto;
+}
+.right{
+	float: right;
+	margin: auto;
+}
+.spaceAround{
+	padding: 10px;
+}
+
+img{
+	width: 100%;
+}
+
+.imgLarge{
+	width: 100%;
+}
+
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.colorTextTopic3{
+	color: blue;
+}
+
+/** TOPIC 7 **/
+
+.flex-container {
+			  display: flex;
+			  justify-content: space-around;
+			  background-color: DodgerBlue;
+			}
+
+			.flex-container > div {
+			  background-color: #f1f1f1;
+			  margin: 30px;
+			  text-align: center;
+			}
+			
+			#div1 {
+				width: 300px;
+				height: 70px;
+				padding: 10px;
+				border: 1px solid #aaaaaa;
+				
+			}
+			
+			#div2 {
+				width: 300px;
+				height: 70px;
+				padding: 10px;
+				border: 1px solid #aaaaaa;
+			}
+			
+			
+			.topic7Img{
+				display: block;
+                border-radius: 20px;
+				max-width:500px;
+				height: 297px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+            #img3:hover{
+                -webkit-transition: 3s;
+                 transform: rotateY(180deg);
+            }
+			
+			#changeMe{
+				text-align: center;
+			}
+		
+/** END TOPIC 7 **/
+
+/** TOPIC 8 **/
+
+
+
+
+
+

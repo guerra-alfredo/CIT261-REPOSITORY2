@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+		<link rel="stylesheet" href="styles/normalize.css">
+        <link href="styles/large.css" rel="stylesheet">
+        
+        <style> 
+            .flex-container {
+              display: flex;
+            }
+
+            .flex-container > div {
+              margin: 10px;
+              padding: 30px;
+
+            }
+
+            .one{
+                width: 80px;
+                height: 20px;
+                
+               
+                /* shorthand to say how the transition for height and width must to last */
+                 -webkit-transition: height 2s, width 0.5s; /* Safari */
+                /* time before the transition start */
+                -webkit-transition-delay: 1s; /* Safari */
+                
+                /* the same above, for other browser*/
+                transition: height 2s, width 0.5s;
+                transition-delay: 1s;
+
+
+                -webkit-transition-timing-function: linear; /* Safari */
+                transition-timing-function: linear; /* All browser */
+            }
+            
+            
+             .elegant{
+                width: 100%;
+                height: 150px;
+                opacity: 1;
+                background:#650740;
+                font-family:Lato;
+                font-size: 3rem;
+                text-align: center;
+                font-weight:900;
+                color:#fff;
+                line-height:150px;
+                
+                -webkit-transition: 3s;
+                transition: 3s;
+                transition-delay: 0.3s;
+                transition-timing-function: ease; /* Tyhe speed*/
+                 
+            }
+            
+            
+            .ziseColor{
+                margin: auto;
+                                
+                
+                width:200px;
+                height:150px;
+                padding: 75px;
+                font-family:Lato;
+                font-size: 2rem;
+                text-align: center;
+                background: black;
+                color:#fff;
+                
+                -webkit-transition: 1s;
+                transition: 1s;
+                transition-timing-function: ease;
+                 
+            }
+            
+        </style>
+        
+	</head>
+	
+	<body>
+        <div class="content">	
+            <header class="spaceAround">
+                <h2>TOPIC 11: Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</h2>
+            </header>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+			
+            <main class="spaceAround">
+				<h3>1.- Move the mouse over the squere and wait a moment!</h3>
+                <p id="demo"></p>
+
+
+                <script>
+
+                        function changeit(setDiv){
+                             setDiv.style.height = "100px";
+                             setDiv.style.width = "100%";
+
+                             //after two seconds I display the next message.
+                             setTimeout(function(){ 
+                             setDiv.style.fontSize = "3rem";
+                             setDiv.innerHTML = "thank you for changing me, have a nice trip!"; 
+                             setDiv.style.backgroundColor = "#E3CEF6";}, 2500);
+
+                            }
+                    
+                        
+                       function makeItElegant(setDiv){
+                             setDiv.style.opacity = "0.5";
+                             setDiv.style.fontSize = "4rem";
+                            }
+                    
+                        function changeZiseColor(setDiv){
+                             setDiv.style.backgroundColor= "#0000FF";
+                             setDiv.style.fontSize = "3.3rem";
+                             setDiv.style.width = "250px";
+                             setDiv.style.height = "200px";
+                            }
+
+                </script>
+
+                <div class="flex-container">
+                    <div onmouseover="changeit(this)" class="one">Move here!</div>
+                </div>
+                
+                <br><br><br>
+                <h3>2.- Elegant, Move the mouse over the squere</h3>
+                <div class="elegant" onmouseover="makeItElegant(this)">This is an elegant space</div>
+                
+                <br><br><br>
+				<h3>3.- Change the size, the color and the font size of the figure. </h3>
+                <br>
+                <div class="ziseColor" onmouseover="changeZiseColor(this)">CHANGE ME!</div>
+                
+                
+            </main>
+			
+			<br><br>
+            <footer>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+	</body>
+</html>

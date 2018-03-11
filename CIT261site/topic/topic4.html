@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+		<link rel="stylesheet" href="styles/normalize.css">
+        <link href="styles/large.css" rel="stylesheet">
+
+	</head>
+	
+	<body>
+        <div class="content">	
+            <header class="spaceAround">
+                <h3>TOPIC 4: Using XMLHTTPRequest to Consume a JSON Web Service</h3>
+            </header>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+			
+            <main class="spaceAround">
+				
+				<p>1.- I have a default list of three object student already charged, those student are inside an array, when I press the button of the FORM to add another student, the current list plus the new student are converted into a string by <strong>JSON.stringify()</strong></p>
+				<p id="listStu"></p>
+				<button onclick="displayStudent()">Display Student</button>
+				<script>
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.onreadystatechange = function() {
+    					if (this.readyState == 4 && this.status == 200) {
+							//convert the JSON object into JavaScritp Object and save it in a variable. 
+        					var student = JSON.parse(this.responseText);
+							//displayStudent(student);
+        					//document.getElementById("demo").innerHTML = student.Age;
+							//document.getElementById("listStu").innerHTML = student.Courses;
+							document.getElementById("listStu").innerHTML = student.Courses[0].season;
+    					}
+					};
+					xmlhttp.open("GET", "student.txt", true);
+					xmlhttp.send();
+					
+				
+				function getData(){
+					
+				}
+					
+					
+			
+				//Function with parameters, I can call a funtion many times.  
+				function displayStudent(alu){
+					//read each object inside of Array.
+					var x;
+					var y;
+					var txt = "";
+					var txt2 = "";
+						for (x in alu) {
+							txt += alu[x] + ", ";
+							for(y in alu.Courses){
+								txt2 += alu.Courses[y] + ", ";
+							}
+							txt2=txt2+"<br>";
+							document.getElementById("listStu").innerHTML = txt2+"<br>";	
+						}
+						txt=txt+"<br>";
+						document.getElementById("listStu").innerHTML = txt+"<br>";	
+				}	
+					
+					
+					
+				
+					
+				</script>
+				
+				
+				<p>2.- After converting the array into a string, I store it using <strong>localStorage.setItem()</strong>, and then I retrieve the data using <strong>localStorage.getItem()</strong>, once I have the data again like a string, I convert it into an array again by using <strong>JSON.parse</strong>, and then I display the updated list()</p> 
+				
+				<p>3.- I added a button to clean the data stored in the browser, for this I used <strong>localStorage.removeItem()</strong> </p>
+				<!-- original list -->
+                <h3>Original list</h3>
+                <p id="list"></p><br>
+				
+				
+				
+						
+
+        	
+            </main>
+            <footer>
+				<br><br>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+        <!-- <script src="scripts/topic3.js"></script> -->
+	</body>
+</html>

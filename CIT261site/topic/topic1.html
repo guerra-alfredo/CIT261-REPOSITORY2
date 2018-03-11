@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+		<link rel="stylesheet" href="styles/normalize.css">
+        <link href="styles/large.css" rel="stylesheet">
+
+	</head>
+	
+	<body>
+        <div class="content">	
+            <header class="spaceAround">
+                <h3>TOPIC 1: Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h3>
+            </header>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+			
+            <main class="spaceAround">
+				<h2>VARIABLES</h2>
+				<img src="images/topic1/variables.jpg" alt="Variables">
+				<h2>OBJECT</h2>
+				<img src="images/topic1/method.jpg" alt="Method"><br><br>
+				<h2>CONDITIONAL STATEMENTS</h2>
+				<img src="images/topic1/conditional1.jpg" alt="conditional">
+				<h2>FUNCTIONS - SWITCH</h2>
+				<img src="images/topic1/functions.jpg" alt="Functions">
+				<h2>ARRAYS - ASSOCIATIVE ARRAYS</h2>
+				<img src="images/topic1/array.jpg" alt="Arrays">
+				
+				<br><br>
+				<form class ="form1">
+				   <h3>ADD NEW STUDENT</h3>
+				  <label for="fname">First Name</label>
+				  <input type="text" id="fname" name="fname">
+				  <label for="lname">Last Name</label>
+				  <input type="text" id="lname" name="lname">
+				  <label for="passp">Passport</label>
+				  <input type="text" id="passp" name="passp"  placeholder="Only numbers...">
+				  <label for="gender">Gender</label>
+				  <input type="text" id="gender" name="gender">
+				  <label for="age">Age</label>
+				  <input type="text" id="age" name="age" placeholder="Only numbers...">
+				  <label for="grade">Grade</label>
+				  <input type="text" id="grade" name="grade" placeholder="Only numbers...">
+                  <button type="button" onclick="insertStudent()">Add Student</button>	
+				</form>
+            
+                <!-- original list -->
+                <h3>Original list</h3>
+                <p id="list"></p><br>
+
+
+                <!-- Sort list by Grade -->
+                <h3>Sort list by Grade</h3>
+                <p id="sortList"></p><br>
+
+
+                <!-- Best students -->
+                <h3>Best students</h3>
+                <p id="bestStudent"></p>
+
+                <!-- Worst students -->
+                <h3>Worst student</h3>
+                <p id="worstStudent"></p>
+
+            </main>
+            <footer>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+        <script src="scripts/arrayMethod.js"></script>
+	</body>
+</html>

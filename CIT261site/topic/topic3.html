@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+		<link rel="stylesheet" href="styles/normalize.css">
+        <link href="styles/large.css" rel="stylesheet">
+
+	</head>
+	
+	<body>
+        <div class="content">	
+            <header class="spaceAround">
+                <h3>TOPIC 3: JSON Parse, Stringify</h3>
+            </header>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+			
+            <main class="spaceAround">
+				
+				<p>1.- I have a default list of three object student already charged, those student are inside an array, when I press the button of the FORM to add another student, the current list plus the new student are converted into a string by <strong>JSON.stringify()</strong></p>
+				<p>2.- After converting the array into a string, I store it using <strong>localStorage.setItem()</strong>, and then I retrieve the data using <strong>localStorage.getItem()</strong>, once I have the data again like a string, I convert it into an array again by using <strong>JSON.parse</strong>, and then I display the updated list()</p> 
+				
+				<p>3.- I added a button to clean the data stored in the browser, for this I used <strong>localStorage.removeItem()</strong> </p>
+				<!-- original list -->
+                <h3>Original list</h3>
+                <p id="list"></p><br>
+				
+				
+				<p class="colorTextTopic3"><strong>Example 01: </strong>Please add another student, and see how the upper list is refreshed</p>
+				<form class ="form1">
+				  <h3>ADD NEW STUDENT</h3>
+				  <label for="fname">Name</label>
+				  <input type="text" id="fname" name="fname" placeholder="First Name - Last Name">
+				  <label for="passp">Passport</label>
+				  <input type="text" id="passp" name="passp"  placeholder="Only numbers...">
+				  <label for="gender">Gender</label>
+				  <input type="text" id="gender" name="gender">
+				  <label for="grade">Grade</label>
+				  <input type="text" id="grade" name="grade" placeholder="Only numbers...">
+                  <button type="button" onclick="insertStudent2()">Add Student</button>	
+				</form>
+				<br>
+				
+				<p class="colorTextTopic3"><strong>Example 02:</strong> Now <strong>refresh</strong> the browser and you will see that the previous list displayed remains with the three students</p>
+				<p class="colorTextTopic3">Insert the passport of the last student added and press the button, despite not being displayed at the upper list, you will see that the student is found because it was stored in your browser</p>
+				<form class ="form1">
+				  <h3>Enter Passport</h3>
+				  <label for="passport">Passport</label>
+				  <input type="text" id="passport" name="passport"  placeholder="Only numbers...">
+                  <button type="button" onclick="findStudent()">FIND STUDENT</button>	
+				</form>
+				
+				<br>
+				
+				<!-- display the selected student by Passport -->
+				<p id="studentData"></p>
+				<br>
+				<p class="colorTextTopic3"><strong>Example 03:</strong>This button clean the data saved into your browser,so if you click the button and update the browser, you could not found the last inserted student, after clicked the button write again the passport and try to see the student</p>
+                <button onclick="cleanLocalStorage()">CLEAN LOCAL STORAGE</button>
+						
+
+        	
+            </main>
+            <footer>
+				<br><br>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+        <script src="scripts/topic3.js"></script>
+	</body>
+</html>
