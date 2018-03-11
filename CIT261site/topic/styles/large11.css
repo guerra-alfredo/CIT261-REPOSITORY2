@@ -1,0 +1,29 @@
+/** Margin to the entire page **/
+.content{
+    margin: 2% 15% 2% 15%;
+    border: 1px solid black;
+}
+
+
+.explains{
+    background-color: lavender;
+    width: 100%;
+    height: 200px;
+}
+
+.clor{
+    color: red;
+}
+
+.clorComment{
+    color: rebeccapurple;
+}
+
+.spaceAround{
+	padding: 10px;
+}
+
+
+
+
+

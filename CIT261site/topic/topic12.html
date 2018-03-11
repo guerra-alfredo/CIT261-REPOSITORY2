@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+        <link href="styles/large12.css" rel="stylesheet">
+
+	</head>
+	
+	<body>
+        <script>
+            function moveMe(moveImg){  
+                moveImg.style.webkitTransform = "translate(160px)";  /* Safari 3-8 */
+                moveImg.style.mozTransform = "translateX(160px)";
+                moveImg.style.msTransform = "translateX(160px)";  //Internet Explorer 9 supports the -ms-transform property
+                moveImg.style.transform = "translateX(160px)"; //IE10+ support the transform property (do not need the ms prefix)
+            }
+        </script>
+        
+        
+        
+        <div class="content">	
+            <main class="spaceAround">
+                 <p>01.- This example has the rotate and translate element from the transform property. 
+                        In this example the elephant rotate when <strong class="clorComment">I move the mouse over him</strong>, and then  when <strong class="clorComment">I clicked </strong> over the elephant , it moves far away from the mouse by using the translate property
+                 </p> 
+<div class="explains">
+   <pre>
+
+    <strong class="clorComment">//the hover event, run the code when I move the mouse over the elephant.</strong> 
+    .moveMe2:<strong class="clor">hover</strong>{<br>
+        <strong class="clorComment">//this code rotate the elephant 30deg.</strong>
+        -ms-transform: <strong class="clor">rotate</strong>(30deg);     /* IE 9 */
+        -webkit-transform: <strong class="clor">rotate</strong>(30deg); /* Safari 3-8 */
+         transform: <strong class="clor">rotate</strong>(30deg);        /* Others browsers */ <br>
+         <strong class="clorComment">//This said how much the animation must last.</strong>
+         <strong class="clor">-webkit-transition</strong>: 3s;  /* For Safari 3.1 to 6.0 */
+         <strong class="clor">transition</strong>: 3s;          /* Others browsers */
+    }
+    
+    <strong class="clorComment">//sending (this) allows to change the current property of the owner element</strong>
+    onclick="<strong class="clor">moveMe(this)</strong>" 
+   
+    <strong class="clorComment">//When I clicked over the elephant its moves 160px far away 
+    the mouse, to do that I am using Transform translate</strong>
+    function moveMe(moveImg){  
+        moveImg.style.webkitTransform = "<strong class="clor">translate(160px)</strong>";  /* Safari 3-8 */
+        moveImg.style.mozTransform = "<strong class="clor">translateX(160px)</strong>";
+        moveImg.style.msTransform = "<strong class="clor">translateX(160px)</strong>";  //Internet Explorer 9 
+        moveImg.style.transform = "<strong class="clor">translateX(160px)</strong>"; //IE10+ 
+    }   
+   </pre>
+</div>
+                <div class="flex-container">
+                    <div class="flexItem2"><img src="img/mause.png" alt="mause" height="80" width="80"></div>
+                     <div class="flexItem1"><img onclick="moveMe(this)" class="moveMe2" src="img/elephant.png" alt="elephant" height="200" width="220"></div>
+                </div>
+
+            </main>
+
+            <p>https://css-tricks.com/almanac/properties/t/transform/</p>
+        </div>
+	</body>
+</html>

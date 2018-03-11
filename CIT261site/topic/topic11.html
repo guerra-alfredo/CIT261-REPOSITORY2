@@ -5,12 +5,14 @@
         <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
 		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
 		<meta name="viewport" content="width=device-width, initialscale=1">
-		<link rel="stylesheet" href="styles/normalize.css">
-        <link href="styles/large.css" rel="stylesheet">
+        <link href="styles/large11.css" rel="stylesheet">
         
         <style> 
             .flex-container {
               display: flex;
+              justify-content: space-around;
+			  background-color: DodgerBlue;
+             
             }
 
             .flex-container > div {
@@ -22,6 +24,7 @@
             .one{
                 width: 80px;
                 height: 20px;
+                background-color:lightgoldenrodyellow;
                 
                
                 /* shorthand to say how the transition for height and width must to last */
@@ -73,6 +76,8 @@
                 color:#fff;
                 
                 -webkit-transition: 1s;
+                -moz-transition: 1s;
+                -o-transition: 1s;
                 transition: 1s;
                 transition-timing-function: ease;
                  
@@ -124,9 +129,21 @@
                             }
 
                 </script>
+                <div class="explains">
+<pre>
+.ziseColor{
+    <strong class="clorComment">//transition will last 1 second.</strong>
+    -webkit-transition: 1s;
+    transition: 1s;
+    //slow start then fast and slowly
+    transition-timing-function: ease;
 
+    }
+
+</pre>
+                </div>
                 <div class="flex-container">
-                    <div onmouseover="changeit(this)" class="one">Move here!</div>
+                    <div  class="one" onmouseover="changeit(this)">Move here!</div>
                 </div>
                 
                 <br><br><br>
