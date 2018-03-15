@@ -2,16 +2,17 @@
 <html lang="en-us">
 	<head>
 		<meta charset="utf-8">
-        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+        <title>CSS ANIMATION</title>
 		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
 		<meta name="viewport" content="width=device-width, initialscale=1">
-        <link href="styles/large13.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/large13.css">
 	</head>
 	
 	<body>
         <div class="content">
             <main class="spaceAround">
-                <p>01.- This example display several squares, those squares are using keyframes to create the animation, each time you reload the browser you could see the animation, furthermore each square is using the delay property with a define time so each one move harmonically
+                <a href="../index.html"><img src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+                <p>01.- This example display several squares, those squares are using keyframes to create the animation, <strong>each time you reload the browser</strong> you could see the animation, furthermore each square is using the delay property with a define time so each one move harmonically
                  </p><br>
                 <div class="explains">
 <pre>
@@ -35,10 +36,11 @@
     animation-fill-mode: <strong class="clor">forwards</strong>; 
 }
 
-<strong class="clorComment">/* Allows the animation to change the current style*/</strong>
+<strong class="clorComment">/* Allows the animation to move and change the current style*/</strong>
 @keyframes <strong class="clor">example1</strong>{
     0%   {background-color:<strong class="clor">orange</strong>; left:0px; top:0px;}
-    100%  {background-color:<strong class="clor">black</strong>; left:50px; top:50px;}}
+    100%  {background-color:<strong class="clor">black</strong>; left:<strong class="clor">50px</strong>; top:<strong class="clor">50px</strong>;}}
+    ...
 </pre>
                 </div>
                 
@@ -52,7 +54,7 @@
                     <div class="squeare6"></div>
                 </div>
                 
-                <p>02.- This example display several cards one over the other, each time you reload the browser you could see how the card is moving  in his x-axis, all those cards <strong>saves the last value</strong> of the keyframe
+                <p>02.- This example display several cards one over the other, <strong>each time you reload the browser</strong> you could see how the card is moving  in his x-axis, all those cards <strong>saves the last value</strong> of the keyframe
                  </p><br>
 
                 <div class="explains2">
@@ -104,6 +106,7 @@
 
                 <div class="explains3">
 <pre>
+
 .ball{
     <strong class="clorComment">/*Leaves the ball near the center*/</strong>
     position: <strong class="clor">absolute</strong>;
@@ -133,7 +136,7 @@
                 </div>
                 
                 <div class="parentDiv3">
-                    <div class="ball"><img onclick="pauseIt()" class="rotateBall" src="img/balon.png" height="200" width="200"></div>
+                    <div class="ball"><img onclick="pauseIt()" class="rotateBall" src="img/balon.png" alt="Rotate ball" height="200" width="200"></div>
                 </div>
                 
             </main>

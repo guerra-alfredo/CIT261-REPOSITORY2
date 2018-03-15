@@ -88,11 +88,10 @@ input[type=text], select {
 				text-align: center;
 			}
 		
-/** END TOPIC 7 **/
-
-/** TOPIC 8 **/
-
-
+#sizeLink{
+    width: 310px;
+    height: 60px;
+}
 
 
 

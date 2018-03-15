@@ -2,94 +2,16 @@
 <html lang="en-us">
 	<head>
 		<meta charset="utf-8">
-        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+        <title>CSS TRANSITION</title>
 		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
 		<meta name="viewport" content="width=device-width, initialscale=1">
-        <link href="styles/large11.css" rel="stylesheet">
-        
-        <style> 
-            .flex-container {
-              display: flex;
-              justify-content: space-around;
-			  background-color: DodgerBlue;
-             
-            }
-
-            .flex-container > div {
-              margin: 10px;
-              padding: 30px;
-
-            }
-
-            .one{
-                width: 80px;
-                height: 20px;
-                background-color:lightgoldenrodyellow;
-                
-               
-                /* shorthand to say how the transition for height and width must to last */
-                 -webkit-transition: height 2s, width 0.5s; /* Safari */
-                /* time before the transition start */
-                -webkit-transition-delay: 1s; /* Safari */
-                
-                /* the same above, for other browser*/
-                transition: height 2s, width 0.5s;
-                transition-delay: 1s;
-
-
-                -webkit-transition-timing-function: linear; /* Safari */
-                transition-timing-function: linear; /* All browser */
-            }
-            
-            
-             .elegant{
-                width: 100%;
-                height: 150px;
-                opacity: 1;
-                background:#650740;
-                font-family:Lato;
-                font-size: 3rem;
-                text-align: center;
-                font-weight:900;
-                color:#fff;
-                line-height:150px;
-                
-                -webkit-transition: 3s;
-                transition: 3s;
-                transition-delay: 0.3s;
-                transition-timing-function: ease; /* Tyhe speed*/
-                 
-            }
-            
-            
-            .ziseColor{
-                margin: auto;
-                                
-                
-                width:200px;
-                height:150px;
-                padding: 75px;
-                font-family:Lato;
-                font-size: 2rem;
-                text-align: center;
-                background: black;
-                color:#fff;
-                
-                -webkit-transition: 1s;
-                -moz-transition: 1s;
-                -o-transition: 1s;
-                transition: 1s;
-                transition-timing-function: ease;
-                 
-            }
-            
-        </style>
-        
+        <link href="styles/large11.css" rel="stylesheet"> 
 	</head>
 	
 	<body>
         <div class="content">	
             <header class="spaceAround">
+                <a href="../index.html"><img src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
                 <h2>TOPIC 11: Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</h2>
             </header>
             <nav>
@@ -97,58 +19,69 @@
             </nav>
 			
             <main class="spaceAround">
-				<h3>1.- Move the mouse over the squere and wait a moment!</h3>
+				<h3>1.- Move the mouse over the square and wait a moment!</h3>
                 <p id="demo"></p>
 
-
-                <script>
-
-                        function changeit(setDiv){
-                             setDiv.style.height = "100px";
-                             setDiv.style.width = "100%";
-
-                             //after two seconds I display the next message.
-                             setTimeout(function(){ 
-                             setDiv.style.fontSize = "3rem";
-                             setDiv.innerHTML = "thank you for changing me, have a nice trip!"; 
-                             setDiv.style.backgroundColor = "#E3CEF6";}, 2500);
-
-                            }
-                    
-                        
-                       function makeItElegant(setDiv){
-                             setDiv.style.opacity = "0.5";
-                             setDiv.style.fontSize = "4rem";
-                            }
-                    
-                        function changeZiseColor(setDiv){
-                             setDiv.style.backgroundColor= "#0000FF";
-                             setDiv.style.fontSize = "3.3rem";
-                             setDiv.style.width = "250px";
-                             setDiv.style.height = "200px";
-                            }
-
-                </script>
                 <div class="explains">
 <pre>
-.ziseColor{
-    <strong class="clorComment">//transition will last 1 second.</strong>
-    -webkit-transition: 1s;
-    transition: 1s;
-    //slow start then fast and slowly
-    transition-timing-function: ease;
 
-    }
+ div  class=<strong class="clor">"originalValues"</strong> onmouseover="<strong class="clor">changeit(this)"</strong>  Move here! /div
+
+ .originalValues{
+    width: 80px; height: 20px; background-color:lightgoldenrodyellow;
+
+     <strong class="clorComment">/* shorthand to say how the transition for height and width must to last */</strong>
+     -webkit-transition: <strong class="clor">height 2s, width 0.5s</strong>;
+     <strong class="clorComment">/* time before the transition start */</strong>
+    -webkit-transition-<strong class="clor">delay</strong>: <strong class="clor">1s</strong>;
+     <strong class="clorComment">/* Same speed from start to end*/</strong>
+    transition-timing-function: <strong class="clor">linear</strong>;
+}
+
+  <strong class="clorComment">//change the currently properties of the Div.</strong>    
+ function changeit(<strong class="clor">setDiv</strong>){
+    <strong class="clorComment">//This use all the available width.</strong>
+     setDiv.style.height = <strong class="clor">"100px"</strong>; setDiv.style.width = <strong class="clor">"100%"</strong>;
+
+    <strong class="clorComment">//after two 2.5 seconds I display the next message.</strong>
+     setTimeout(function(){ 
+     setDiv.style.fontSize = <strong class="clor">"3rem"</strong>;
+     setDiv.style.textAlign = <strong class="clor">"center"</strong>;
+     setDiv.innerHTML = <strong class="clor">"Thank you for changing me!"</strong>; 
+     setDiv.style.backgroundColor = "#E3CEF6";}, <strong class="clor">2500</strong>);
+}
 
 </pre>
                 </div>
                 <div class="flex-container">
-                    <div  class="one" onmouseover="changeit(this)">Move here!</div>
+                    <div  class="originalValues" onmouseover="changeit(this)">Move here!</div>
                 </div>
                 
                 <br><br><br>
-                <h3>2.- Elegant, Move the mouse over the squere</h3>
+                <h3>2.- Elegant, Move the mouse over the square</h3>
+                <div class="explains2">
+<pre>
+
+<strong class="clorComment">//This code is similar to the one explained above</strong>
+div class="<strong class="clor">elegant</strong>" onmouseover="<strong class="clor">makeItElegant(this)</strong>"> This is an elegant space /div
+
+.elegant{
+    ... setting not displayied
+    
+    transition: <strong class="clor">3s</strong>;
+    transition-delay: <strong class="clor">0.3s</strong>;
+    transition-timing-function: <strong class="clor">ease</strong>; 
+}
+
+function makeItElegant(setDiv){
+     setDiv.style.<strong class="clor">opacity</strong> = "0.5";
+     setDiv.style.<strong class="clor">fontSize</strong> = "4rem";
+}
+
+</pre>
+                </div>
                 <div class="elegant" onmouseover="makeItElegant(this)">This is an elegant space</div>
+                
                 
                 <br><br><br>
 				<h3>3.- Change the size, the color and the font size of the figure. </h3>
@@ -163,5 +96,6 @@
                 <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
             </footer>
         </div>
+        <script src="scripts/topic11.js"></script>
 	</body>
 </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>DOM MANIPULATION</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+        <link href="styles/large6.css" rel="stylesheet">
+        
+        
+	</head>
+	
+	<body>
+        <div class="content">	
+            <header class="spaceAround">
+                <a href="../index.html"><img src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+            </header>
+			
+            <main class="spaceAround">
+				<h2>TOPIC 06: DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</h2>
+            
+              
+
+                
+                
+                
+                <div class="explains">
+<pre>
+    
+    var h = document.<strong class="clor">createElement</strong>("H3"); <strong class="clorComment">// allow to create element, Heading</strong>
+    var textHeading = document.<strong class="clor">createTextNode</strong>("I am a new heading - H3");<strong class="clorComment"> //allow to change the name of the object</strong>
+    h.<strong class="clor">appendChild</strong>(textHeading); <strong class="clorComment">//allow to append the element with the name.</strong>
+    document.body.<strong class="clor">appendChild</strong>(h);<strong class="clorComment"> //insert the element to the body.</strong>
+    
+    var newItem = document.createElement("LI"); <strong class="clorComment">//create en li element</strong>
+    var btn = document.createElement("BUTTON"); <strong class="clorComment">//create a button element</strong>
+    var para = document.createElement("P"); <strong class="clorComment">//create a paragraph element</strong>
+    
+    <strong class="clorComment">// allow to insert an element at a position by the childNodes[0]</strong>
+    var myNumbers = document.getElementById("numbers");
+    myNumbers.insertBefore(newItem, myNumbers.<strong class="clor">childNodes[0]</strong>);
+    
+    
+    <strong class="clorComment">//this code create a paragraph and save it in a DIV, by using an Id inside the DIV.</strong>
+    var para = document.createElement("P");
+    var text = document.createTextNode("This paragraph was added inside a Div, furthermore did you notice the new number inside the list and this was added in his right place!");
+    para.appendChild(text);
+    document.getElementById<strong class="clor">("newP")</strong>.appendChild(para);
+    
+    div <strong class="clor">id="newP"</strong> 
+    
+</pre>
+                </div>
+                <br><br>
+                
+            
+            <p>1.- This button create several elements such as li (ONE) which is added at his right place just above the li (TWO), furthermore this button add a heading, a paragraph and a new button.</p>
+            <div>
+                <button onclick="createManyElement()">Create new elements</button><br>
+            </div> 
+            
+            <p>2.- This use the removeChild element to move the li (FOUR) from the current list</p>
+            <div>
+                <button onclick="removeItemFour()">Remove Item Four</button><br>
+            </div>
+            
+            
+            <p>3.- This use the replace property to change the value "ONE" for "1"</p>
+
+            <div>
+                <button onclick="replaceItem()">Replace ONE for 1</button><br>
+            </div>
+            
+            
+                
+            <div id="newP"></div>    
+                
+            <ul id="numbers">
+              <li>TWO</li>
+              <li>THREE</li>
+              <li id="itemFour">FOUR</li>
+            </ul>
+                
+                
+                
+                
+            </main>
+			
+			<br><br>
+    
+        </div>
+        <script src="scripts/topic6.js"></script>
+	</body>
+</html>
