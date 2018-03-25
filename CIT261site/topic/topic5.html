@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+		<link rel="stylesheet" href="styles/normalize.css">
+        <link href="styles/large.css" rel="stylesheet">
+
+	</head>
+	
+	<body>
+        <div class="content">	
+            <header class="spaceAround">
+                <a href="../index.html"><img id="sizeLink" src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+                <h3>TOPIC 5: Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h3>
+            </header>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+			
+            <main class="spaceAround">
+                <p>Web Storage is an API that allows to store data within the browser client, this is more secure than using cookis, and allow to store more data</p>
+                <div id="result"></div>
+                <div id="result2"></div>
+                
+                
+                <form class ="form1">
+				  <h3>Input your favorite sport !</h3>
+				  <label for="fname">First Name</label>
+				  <input type="text" id="fname" name="fname">
+                    
+                  <label for="age">Age</label>
+                  <input type="text" id="age" name="age"  placeholder="Only numbers...">
+				  
+                  <label for="gender">Gender</label>
+                  <input type="text" id="gender" name="gender">
+                  
+                  <select name="sport">
+                    <option id="cycling" value="Cycling">Cycling</option>
+                    <option id="football" value="Football">Football</option>
+                    <option id="golf" value="Golf">Golf</option>
+                    <option id="basketball" value="Basketball">Basketball</option>
+                    <option id="climbing" value="Climbing">Climbing</option>
+                  </select>
+                  <br><br>
+                  <button type="button" onclick="saveSport()">Save</button>	
+				</form>
+
+                <script>
+                    
+                    //Constructor, this allow to create many objects.
+                    function NewHobby(fname,age,sport,gender){
+                        this.firstName = fname;
+                        this.lastName = lname;
+                        this.passport = pport;
+                        this.gender = gder;
+                        this.age = age;
+                        this.grade = grade;
+                    }
+                    
+                    
+                    function saveSport(){
+                    
+                    fn = document.getElementById("fname").value;
+                    ln = document.getElementById("lname").value;
+                    ps = parseInt(document.getElementById("passp").value);
+                    }
+                    
+                    
+                    
+                    
+                    // Check browser support 
+                    if (typeof(Storage) !== "undefined") {
+                        // Store data for the time you want it has no expiration date, this use pair name/value
+                        localStorage.setItem("lastname", "Smith");
+                        // Retrieve data with the getItem property.
+                        //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+                        //this allow to remove the date stored
+                        localStorage.removeItem("lastname");
+                    } else {
+                        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+                    }
+                    
+                    
+                     // Check browser support 
+                     //sessionStorage allows to Storage data while the browser is open, once it is closed the data is deleted
+                    if (typeof(sessionStorage) !== "undefined") {
+                        // Store data for the time you want it has no expiration date, this use pair name/value
+                        sessionStorage.setItem("Nombre", "Alfredo");
+                        // Retrieve data with the getItem property.
+                        document.getElementById("result2").innerHTML = sessionStorage.getItem("Nombre");
+                        //this allow to remove the date stored
+                    
+                    } else {
+                        document.getElementById("result2").innerHTML = "Sorry, your browser does not support Web Storage...";
+                    }
+                    
+                    
+                    
+                </script>
+
+        	
+            </main>
+            <footer>
+				<br><br>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+        <!-- <script src="scripts/topic3.js"></script> -->
+	</body>
+</html>
