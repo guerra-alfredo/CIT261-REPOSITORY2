@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+		<link rel="stylesheet" href="styles/normalize.css">
+        <link href="styles/large9.css" rel="stylesheet">
+
+	</head>
+	
+	<body onload="ChangeBody(this)">
+        <div class="content">	
+            <header class="spaceAround">
+                <a href="../index.html"><img id="sizeLink" src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+                <h3>TOPIC 9: Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</h3>
+            </header>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+			
+            <main class="spaceAround">
+                
+                <p>1.- To start did you notice the background color, well we are using the <strong class="clor">onload</strong> method, so when the page is loaded the color changes automatically</p>
+<div class="explains">
+<pre>
+
+<strong class="clorComment">//this allows to run this code before anything else</strong>
+body <strong class="clor">onload</strong>="ChangeBody()"
+    //JS
+    function <strong class="clor">ChangeBody()</strong>{
+        document.body.style.<strong class="clor">backgroundColor</strong> = "#F5F6CE";
+    }
+</pre>
+</div>
+                
+                
+                <br>
+                <p>2.- In this example we will be using the <strong class="clor">touchstart</strong> event, but as I am running this code from a computer instead of a smartphone, I will use the click event throught an <strong class="clor">addEventListener event</strong></p>
+                <p>Choose a color by clicking the square</p>
+<div class="explains2">
+<pre>
+
+<strong class="clorComment">//This div have an id call touch1</strong>
+div  id="<strong class="clor">touch1</strong>">coral  /div
+
+<strong class="clorComment">//I am using the EventListener, by the click method.</strong>
+var op1 = document.getElementById("<strong class="clor">touch1</strong>");
+op1.<strong class="clor">addEventListener</strong>("click", <strong class="clor">backgroundPage</strong>);
+function <strong class="clor">backgroundPage</strong>() {
+   document.body.style.<strong class="clor">backgroundColor</strong> = "coral";
+}
+  
+</pre>                    
+</div><br>
+               <p>3.- This example use Animation and transition to move some colored balloons, first of all by using transition I moved the balloons to the right, despite you could not see how it moves because I am using shadow to hide this, you will notice that it start from the center, after that I am using animation join with some keyframes to move the balloons upwards  </p>
+                 <!--<button class="button button2" type="button" ondblclick="deleteStorageItems()">Double-click</button>-->
+              
+                <div id="touch1">coral</div>
+                <div id="touch2">beige</div>
+                <div id="touch3">cadetblue</div>
+                <div id="touch4">azure</div>
+                
+                <p>This button is using the click event</p>
+           
+                <button class='toggleButton' value='Play'>Play</button>
+                <br><br>
+                <button class='toggleButton2' value='Play'>Play</button>
+                
+                <div>
+                    <img src="images/topic9/variosG.png"  class='box' alt="globos" >
+                </div> 
+                
+                <div class="moveUP">
+                    <h1 class='box2'>Welcome Back!</h1>
+                </div>
+                
+                
+                
+                <script>  
+                    var op1 = document.getElementById("touch1");
+                    op1.addEventListener("click", backgroundPage);
+                    function backgroundPage(event) {
+                       document.body.style.backgroundColor = "coral";
+                    }
+                    
+                    document.getElementById("touch2").addEventListener("click", backgroundPage2);
+                    function backgroundPage2() {
+                       document.body.style.backgroundColor = "beige";
+                    }
+                    
+                    document.getElementById("touch3").addEventListener("click", backgroundPage3);
+                    function backgroundPage3() {
+                       document.body.style.backgroundColor = "cadetblue";
+                    }
+
+                    document.getElementById("touch4").addEventListener("click", backgroundPage4);
+                    function backgroundPage4() {
+                       document.body.style.backgroundColor = "azure";
+                    }
+                    
+                </script>
+                
+                
+            </main>
+            <footer>
+				<br><br><br><br><br><br><br><br><br><br>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+        <!-- <script src="scripts/topic3.js"></script> -->
+	</body> 
+                <script>
+                    var boxOne = document.getElementsByClassName('box')[0];
+
+                    document.getElementsByClassName('toggleButton')[0].onclick = function() {
+                      if(this.innerHTML === 'Play') 
+                      { 
+                        this.innerHTML = 'Stop';
+                        boxOne.classList.add('horizTranslate');
+                      } else {
+                        this.innerHTML = 'Play';
+                        boxOne.classList.remove('horizTranslate');    
+                      }  
+                    }
+                    
+                    
+                    function ChangeBody(setMe){
+                        
+                        document.body.style.backgroundColor = "#F5F6CE";
+                        
+                        //var para = document.createElement("p");
+                        //var node = document.createTextNode("This is new.");
+                        //para.appendChild(node); 
+                        //var element = document.getElementById("div1");
+                        //element.appendChild(para);
+                          
+                    }
+                
+                </script>
+    
+                <script>
+                    var boxOne2 = document.getElementsByClassName('box2')[0];
+
+                    document.getElementsByClassName('toggleButton2')[0].onclick = function() {
+                      if(this.innerHTML === 'Play') 
+                      { 
+                        this.innerHTML = 'Stop';
+                        boxOne2.classList.add('horizTranslate2');
+                      } else {
+                        this.innerHTML = 'Play';
+                        boxOne2.classList.remove('horizTranslate2');    
+                      }  
+                    }
+                    
+                    
+                </script>
+    
+    
+    
+                
+</html>

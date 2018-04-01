@@ -1,0 +1,65 @@
+/** Margin to the entire page **/
+.content{
+    margin: 2% 15% 2% 15%;
+    border: 1px solid black;
+}
+
+.form1{
+	width: 80%;
+	margin: auto;
+}
+.right{
+	float: right;
+	margin: auto;
+}
+.spaceAround{
+	padding: 10px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.colorTextTopic3{
+	color: blue;
+}
+
+		
+#sizeLink{
+    width: 310px;
+    height: 60px;
+}
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: #008CBA;
+    width: 100%;
+} /* Blue */
+
+
+.center{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: auto;
+    
+    
+}
