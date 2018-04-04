@@ -1,0 +1,47 @@
+[
+{
+	"Name":"John",
+	"Age":31,
+	"Gender":"Male",
+	"Courses":[
+	        { "season":"Winter", "name":"COMM 130", "finalGrade":"B" },
+	        { "season":"Winter", "name":"B 250", "finalGrade":"-A"  },
+	        { "season":"Fall", "name":"CIT-230", "finalGrade":"A"  },
+		{ "season":"Winter", "name":"CIT-160", "finalGrade":"-A" },
+		{ "season":"Winter", "name":"CS 313", "finalGrade":"-A" },
+		{ "season":"Winter", "name":"CS 364", "finalGrade":"-A" },
+	        { "season":"Winter", "name":"CIT-261", "finalGrade":"A"}
+		]
+},
+{
+	"Name":"Peter",
+	"Age":25,
+	"Gender":"Male",
+	"Courses":[
+		{ "season":"Winter", "name":"CIT-160", "finalGrade":"B" },
+		{ "season":"Winter", "name":"CS 313", "finalGrade":"B" },
+		{ "season":"Winter", "name":"CS 364", "finalGrade":"B" },
+	        { "season":"Winter", "name":"CIT-261", "finalGrade":"A"}
+		]
+},
+{
+	"Name":"Alfredo",
+	"Age":34,
+	"Gender":"Male",
+	"Courses":[
+	        { "season":"Winter", "name":"CIT-160", "finalGrade":"A" },
+	        { "season":"Winter", "name":"WDD-100", "finalGrade":"A"  },
+	        { "season":"Fall", "name":"CIT-230", "finalGrade":"-A"  },
+	        { "season":"Winter", "name":"CIT-261", "finalGrade":"Nothing Yet"}
+		]
+},
+{
+	"Name":"Denise",
+	"Age":31,
+	"Gender":"Female",
+	"Courses":[
+	        { "season":"Winter", "name":"WDD-100", "finalGrade":"A"  },
+	        { "season":"Winter", "name":"CIT-261", "finalGrade":"C"}
+		]
+}
+]

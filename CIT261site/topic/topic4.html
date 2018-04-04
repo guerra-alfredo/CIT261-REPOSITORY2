@@ -6,7 +6,7 @@
 		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
 		<meta name="viewport" content="width=device-width, initialscale=1">
 		<link rel="stylesheet" href="styles/normalize.css">
-        <link href="styles/large.css" rel="stylesheet">
+        <link href="styles/large4.css" rel="stylesheet">
 
 	</head>
 	
@@ -22,68 +22,67 @@
 			
             <main class="spaceAround">
 				
-				<p>1.- I have a default list of three object student already charged, those student are inside an array, when I press the button of the FORM to add another student, the current list plus the new student are converted into a string by <strong>JSON.stringify()</strong></p>
-				<p id="listStu"></p>
-				<button onclick="displayStudent()">Display Student</button>
-				<script>
-					var xmlhttp = new XMLHttpRequest();
-					xmlhttp.onreadystatechange = function() {
-    					if (this.readyState == 4 && this.status == 200) {
-							//convert the JSON object into JavaScritp Object and save it in a variable. 
-        					var student = JSON.parse(this.responseText);
-							//displayStudent(student);
-        					//document.getElementById("demo").innerHTML = student.Age;
-							//document.getElementById("listStu").innerHTML = student.Courses;
-							document.getElementById("listStu").innerHTML = student.Courses[0].season;
-    					}
-					};
-					xmlhttp.open("GET", "student.txt", true);
-					xmlhttp.send();
-					
-				
-				function getData(){
-					
-				}
-					
-					
-			
-				//Function with parameters, I can call a funtion many times.  
-				function displayStudent(alu){
-					//read each object inside of Array.
-					var x;
-					var y;
-					var txt = "";
-					var txt2 = "";
-						for (x in alu) {
-							txt += alu[x] + ", ";
-							for(y in alu.Courses){
-								txt2 += alu.Courses[y] + ", ";
-							}
-							txt2=txt2+"<br>";
-							document.getElementById("listStu").innerHTML = txt2+"<br>";	
-						}
-						txt=txt+"<br>";
-						document.getElementById("listStu").innerHTML = txt+"<br>";	
-				}	
-					
-					
-					
-				
-					
-				</script>
-				
-				
-				<p>2.- After converting the array into a string, I store it using <strong>localStorage.setItem()</strong>, and then I retrieve the data using <strong>localStorage.getItem()</strong>, once I have the data again like a string, I convert it into an array again by using <strong>JSON.parse</strong>, and then I display the updated list()</p> 
-				
-				<p>3.- I added a button to clean the data stored in the browser, for this I used <strong>localStorage.removeItem()</strong> </p>
-				<!-- original list -->
-                <h3>Original list</h3>
-                <p id="list"></p><br>
-				
-				
-				
-						
+                <p>1.- I have a default list of several courses for one student, this data is in a document inside the server files, to get access I am using <strong class="clor">XMLHTTPRequest</strong>, as the data is in JSON format I must to use <strong class="clor">JSON.parse()</strong> to convert and use the data</p>
+<div class="explains">
+<pre>
 
+button onclick="<strong class="clor">displayList1()</strong>">Display Student /button
+
+function <strong class="clor">displayList1()</strong>{
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        <strong class="clorComment">//when the readyState is 4 and the status is 200 the response is ready</strong>
+        if (this.readyState == 4 && this.status == 200) {
+            <strong class="clorComment">//convert the JSON object into JavaScript Object and save it in a variable.</strong>
+            var student = JSON.parse(this.responseText);
+            <strong class="clorComment">//I am sendig the object to a function to display the student.</strong>
+            displayStudent1(student);
+        }
+    };
+    <strong class="clorComment">//I am usising the method Get, and telling the función what file to open, in this case student.txt</strong>
+    xmlhttp.open("GET", "<strong class="clor">student.txt</strong>", true);
+    xmlhttp.send();
+}
+
+</pre>    
+</div><br><br>                
+                <a href="student.txt" target="_blank">DOC: Single Student</a><br><br>
+				<button onclick="displayList1()">Display Student</button><br>
+                <p id="listStu"></p><br><br>
+                
+                 <p>2.- In this example I am displaying several students with their periods and their grades by courses.
+                     to do that I used <strong class="clor">XMLHTTPRequest</strong> to get the data from the server and I am using 
+                     <strong class="clor">JSON.parse()</strong> to convert and use the data</p>
+<div>
+<pre class="explains2">
+
+<strong class="clorComment">// the example XMLHTTPRequest is similar to the previous explained</strong>
+
+<strong class="clorComment">// after I get the response from XMLHTTPRequest I call a function to display the list of student.</strong>
+var student = JSON.parse(this.responseText);
+displayStudent2(student);
+
+<strong class="clorComment">// I changed the file name for the search</strong>
+xmlhttp.open("GET", "<strong class="clor">students.txt"</strong>, true);
+
+</pre>
+</div>
+                <a href="students.txt" target="_blank">DOC: Several Student</a><br><br>
+                <button onclick="displayList2()">Display List Student</button>
+                <p id="listStu2"></p><br>
+                
+                <p>3.- This example search for a specific student by writing <strong class="clor">the name of the student</strong>, the name list is given in the upper list of students</p>
+                             
+                <form class ="form1">
+				  <h3>Search student by Name</h3>
+				  <label for="fname">First Name</label>
+				  <input type="text" id="fname" name="fname">
+                  <br><br>
+                  <button type="button" onclick="displayList3()">Search</button>	
+				</form>
+                <p id="listStu3"></p>
+                
+                
         	
             </main>
             <footer>
@@ -91,6 +90,6 @@
                 <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
             </footer>
         </div>
-        <!-- <script src="scripts/topic3.js"></script> -->
+        <script src="scripts/topic4.js"></script>
 	</body>
 </html>
