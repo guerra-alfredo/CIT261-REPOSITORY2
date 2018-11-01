@@ -1,45 +1,58 @@
     var fn,ln,ps,ag,ge,gr;
     var objStudent;
 
-	//Constructor, this allow to create many objects.
-	function NewStudent(fname,lname,pport,gder,age,grade){
-		this.firstName = fname;
-		this.lastName = lname;
-		this.passport = pport;
-		this.gender = gder;
-		this.age = age;
-		this.grade = grade;
-	}
+    //Constructor, this allow to create many objects.
+    function NewStudent(fname,lname,pport,gder,age,grade){
+            this.firstName = fname;
+            this.lastName = lname;
+            this.passport = pport;
+            this.gender = gder;
+            this.age = age;
+            this.grade = grade;  
+    }
 
+//I am using Inheritance to add a new property to the constructor. 
+NewStudent.prototype.nationality = "Chile";
+
+//I am using Inheritance to add new methods to objects constructors
+//NewStudent.prototype.agePrototype = function() {
+    //var result = "";
+    //if (this.age < 30){
+        //result = "Very young";   
+    //}else{
+        //result = "Not so young";
+    //}
+    //return result;
+//};
 
 //Default List
     //Creating Object with the keyword new.
-	var alum1 = new NewStudent("Peter","Hall",1111,"male",25,8);
-	var alum2 = new NewStudent("Michael","Smith",2222,"male",30,9);
-	var alum3 = new NewStudent("Luis","Morales",3333,"male",23,6);
+    var alum1 = new NewStudent("Peter","Hall",1111,"male",25,8);
+    var alum2 = new NewStudent("Michael","Smith",2222,"male",30,9);
+    var alum3 = new NewStudent("Luis","Morales",3333,"male",23,6);
 
 
-    //load a list of students into an array.
+    //load a list of students inside an array.
     var student = [alum1, alum2, alum3];
                 
 
     //insert a new student into an array.
-	var alum4 = new NewStudent("Denise","Calle",4444,"female",35,10);
+    var alum4 = new NewStudent("Denise","Calle",4444,"female",35,10);
     student.push(alum4);
    
-    //display all student inside the array.
+    //Fuction that display all student inside the array.
     displayStudent();
 //End default List
 
 
-	function findStudent(){
-        ps = parseInt(document.getElementById("passport").value);
-		displayStudentByPassoport(ps);
-	}
+    function findStudent(){
+    ps = parseInt(document.getElementById("passport").value);
+            displayStudentByPassoport(ps);
+    }
 
 	//Display a student by Passport.
     function displayStudentByPassoport(ps){
-		var passport = ps;
+	var passport = ps;
         var x;
         var txt = "";
         //read each object inside of Array.
@@ -47,15 +60,17 @@
             var alu = student[i];
             //read each atribute of an object one by one. 
             for (x in alu) {
-				if (alu.passport == passport){
-				   document.getElementById("fname2").innerHTML = alu.firstName;
-				   document.getElementById("lname2").innerHTML = alu.lastName;
-				   document.getElementById("passp2").innerHTML = alu.passport;
-				   document.getElementById("age2").innerHTML = alu.age;
-				   document.getElementById("gender2").innerHTML = alu.gender;
-				   document.getElementById("grade2").innerHTML = alu.grade;
-				   break;
-				}
+                if (alu.passport == passport){
+                   // Adding method to an object.
+                   alu.fullName = function(){
+                         return this.firstName+" "+this.lastName;
+                   }
+                   
+                   
+                   //document.getElementById("fname2").innerHTML = alu.firstName+" "+alu.lastName
+                   document.getElementById("fname2").innerHTML = "I called the full name by adding a method to the object"+"\n"+alu.fullName(); 
+                   break;
+                }
              }
         }
     }
@@ -77,18 +92,29 @@
 		if(fn == "" || ln == "" || ps == "" || ag == ""|| ge == ""|| gr == "" ){
 		    alert("Please fill all fields!\nTo add another student");
 		} else {
-			
-			objStudent = {firstName: fn, lastName: ln, passport: ps, age:ag, grade: gr};
+			objStudent = {firstName: fn, lastName: ln, passport: ps, age:ag, grade: gr, 
+                            // Using Getters
+                            get gradeNote() {
+                                var result = "";
+                                if (this.grade > 8){
+                                    result = "Excellent grade!";   
+                                }else{
+                                    result = "Good";
+                                }
+                                return result;
+                            }
+                        };
 			
 			//Send an object to a function to know if the student exist return a boolean
 			var existStudent = ifExistStudent(objStudent);
-			
+                        
+                        
 			
 			if (existStudent == true){
 				alert("Sorry but this student already exist!\nEnter another student");
 			}else{
 				
-
+                                alert(objStudent.gradeNote);
 				student.push(objStudent);
 
 

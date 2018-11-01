@@ -1,115 +1,116 @@
-    var fn,ln,ps,ag,ge,gr;
-    var objStudent;
+    
+//Global variables
+var fn,ln,ps,ag,ge,gr;
+var objStudent;
 
-//Default List
-    //create object student.
-    var alum1 = {firstName: "Peter", lastName: "Hall", passport: 1111, gender:"male", age:25,grade: 8};
-    var alum2 = {firstName: "Michael", lastName: "Smith", passport: 2222, gender:"male", age:30,grade: 9};
-    var alum3 = {firstName: "Luis", lastName: "Morales", passport: 3333, age:23, gender:"male", grade: 6};
+//Create object
+//this was made to have a loaded list to test the functionality of the application. 
+var alum1 = {firstName: "Peter", lastName: "Hall", passport: 1111, gender:"male", age:25,grade: 8};
+var alum2 = {firstName: "Michael", lastName: "Smith", passport: 2222, gender:"male", age:30,grade: 9};
+var alum3 = {firstName: "Luis", lastName: "Morales", passport: 3333, age:23, gender:"male", grade: 6};
 
 
-    //load a list of students into an array.
-    var student = [alum1, alum2, alum3];
+//Save a list of students (object) into an array.
+var student = [alum1, alum2, alum3];
                 
 
-    //insert a new student into an array.
-    var alum4 = {firstName: "Denise", lastName: "Calle", passport: 4444, gender:"female", age:35, grade: 10};
-    student.push(alum4);
+//Another way to insert a new student into an array by using the push method.
+var alum4 = {firstName: "Denise", lastName: "Calle", passport: 4444, gender:"female", age:35, grade: 10};
+//this method insert the new student at the end of the array. 
+student.push(alum4);
    
-    //display all student inside the array.
-    displayStudent();
-//End default List
+//This Function display all students from the arrays "student".
+//So when the page load, we will have a default list. 
+displayStudent();
 
 
 
-    //get the values from a form, saving it inside an object, after thet I update the currest list of student. 
-    function insertStudent(){
-        //var thigh = get("va1").value;
-        fn = document.getElementById("fname").value;
-        ln = document.getElementById("lname").value;
-        ps = parseInt(document.getElementById("passp").value);
-        ag = parseInt(document.getElementById("age").value);
-        ge = document.getElementById("gender").value;
-        gr = parseInt(document.getElementById("grade").value);
-		
-		
-		
 
-		if(fn == "" || ln == "" || ps == "" || ag == ""|| ge == ""|| gr == "" ){
-		    alert("Please fill all fields!\nTo add another student");
-		} else {
-			
-			objStudent = {firstName: fn, lastName: ln, passport: ps, age:ag, grade: gr};
-			
-			//Send an object to a function to know if the student exist return a boolean
-			var existStudent = ifExistStudent(objStudent);
-			
-			
-			if (existStudent == true){
-				alert("Sorry but this student already exist!\nEnter another student");
-			}else{
-				
-
-				student.push(objStudent);
+//This Function allows to insert a new student.
+function insertStudent(){
+    fn = document.getElementById("fname").value;
+    ln = document.getElementById("lname").value;
+    //Parses a string into an integer.
+    ps = parseInt(document.getElementById("passp").value);
+    ag = parseInt(document.getElementById("age").value);
+    ge = document.getElementById("gender").value;
+    gr = parseInt(document.getElementById("grade").value);
 
 
 
-		//--REFRESH DATA--
+    //Conditional statement - If there is an empty value then a message is displayed.
+    if(fn == "" || ln == "" || ps == "" || ag == ""|| ge == ""|| gr == "" ){
+        alert("Please fill all fields!\nTo add a new student");
+    } else {
+        //Save the input data into an object(global object).
+        //Literal objecct
+        objStudent = {firstName: fn, lastName: ln, passport: ps, age:ag, grade: gr};
 
-				//Display list of original input.
-				displayStudent();
-
-				//create a copy the original array to sort from hights to lower grade.
-				var copyStudent = student.slice(0);
-
-				//save into a new array the sorted list by grade.
-				var lastSortArray = sortByGradeHighest(copyStudent);
-
-				//Display the last sorted list
-				displaySortStudent(copyStudent);
-
-		//BEST STUDENT//
-
-				//this must have the highest grade object.
-				var st = lastSortArray[0];
-				//to get a value from an object, we write de obect.property
-				var hGrade = st.grade;
+        //Function with parameter - Query if the student already exist (by passport), returns a boolean
+        var existStudent = ifExistStudent(objStudent);
 
 
-				//display a list of student with the higher grade, it receive the order array + the best grade.
-				findBestStudent(lastSortArray,hGrade);
+        if (existStudent == true){
+            alert("Sorry but this student already exist!\nEnter another student");
+        }else{
+            student.push(objStudent);
+
+    //--REFRESH DATA--
+
+            //Display list of original input.
+            displayStudent();
+
+            //create a copy the original array to sort from hights to lower grade.
+            var copyStudent = student.slice(0);
+
+            //save into a new array the sorted list by grade.
+            var lastSortArray = sortByGradeHighest(copyStudent);
+
+            //Display the last sorted list
+            displaySortStudent(copyStudent);
+
+    //BEST STUDENT//
+
+            //this must have the highest grade object.
+            var st = lastSortArray[0];
+            //to get a value from an object, we write de obect.property
+            var hGrade = st.grade;
 
 
-		//WORST STUDENT//
+            //display a list of student with the higher grade, it receive the order array + the best grade.
+            findBestStudent(lastSortArray,hGrade);
 
-				//create a copy the original array
-				var copyStudent2 = student.slice(0);
 
-				//save into a new array, sorted list by grade from lower to highest ;
-				var sortArrayL = sortByGradeLowest(copyStudent2);
+    //WORST STUDENT//
 
-				//this must have the lower grade.
-				var lg = sortArrayL[0];
-				//to get a value from an object, we write de obect.property
-				var lGrade = lg.grade;
+            //create a copy the original array
+            var copyStudent2 = student.slice(0);
 
-				findWorstStudent(sortArrayL,lGrade);
-			}
-		}
-	
+            //save into a new array, sorted list by grade from lower to highest ;
+            var sortArrayL = sortByGradeLowest(copyStudent2);
+
+            //this must have the lower grade.
+            var lg = sortArrayL[0];
+            //to get a value from an object, we write de obect.property
+            var lGrade = lg.grade;
+
+            findWorstStudent(sortArrayL,lGrade);
+        }
     }
 
+}
 
-	//Look if a student existe by their passport. 
+
+	//Search all list to see if an student exist by their passport. 
     function ifExistStudent(inputStudent){
         var x;
         var txt = "";
-		//get the value from a property.
+		//get the value from the property on an object.
 		var passPortStudent = inputStudent.passport;
-        //read each object inside of Array.
+        //I am using a "For Loop" to read each object inside of Array.
         for (i=0; i < student.length;i++){
             var alu = student[i];
-            //read each atribute of an object one by one. 
+            //I am using a "For In Loop" to read each atribute of an object. 
             for (x in alu) {
 				if (alu.passport == passPortStudent){
 					return true;
@@ -123,14 +124,14 @@
 
 
 
-    //Display a list of all student - Function without parameters.
+    //Display all student - Function without parameters.
     function displayStudent(){
         var x;
         var txt = "";
-        //read each object inside of Array.
+        //I am using a "For Loop" to read each object inside of Array.
         for (i=0; i < student.length;i++){
             var alu = student[i];
-            //read each atribute of an object one by one. 
+            //I am using a "For In Loop" to read each atribute of an object. 
             for (x in alu) {
                 txt += alu[x] + ", ";
              }

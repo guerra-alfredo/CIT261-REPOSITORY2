@@ -1,6 +1,6 @@
 {
-	"Name":"Alfredo",
-	"Age":34,
+	"Name":"John",
+	"Age":31,
 	"Gender":"Male",
 	"Courses":[
 	        { "season":"Winter", "name":"CIT-160", "finalGrade":"A" },

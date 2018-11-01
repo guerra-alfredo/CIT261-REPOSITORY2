@@ -14,76 +14,61 @@
         <div class="content">	
             <header class="spaceAround">
                 <a href="../index.html"><img id="sizeLink" src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
-                <h3>TOPIC 2: Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h3>
             </header>
             <nav>
                 <!-- future main memu -->
             </nav>
 			
             <main class="spaceAround">
-				<h2>CREATING AN OBJECT</h2>
-				<img src="images/topic2/createObject.png" alt="Creating Object">
-				<h2>OBJECT ARE MUTABLES</h2>
-				<img src="images/topic2/objectMutable.png" alt="Object are Mutables"><br><br>
-				<h2>MODIFY OBJECTS</h2>
-				<img src="images/topic2/modifyObject.png" alt="Modify Objects">
-				<h2>ADDING METHOD TO AN OBJECT</h2>
-				<img src="images/topic2/createingMethod.png" alt="Add Method">
-				<h2>CONSTRUCTOR</h2>
-				<img src="images/topic2/constructor.png"alt="Arrays">
-				<h2>CONSTRUCTOR - ADDING PROPERTY AND METHOD</h2>
-				<img src="images/topic2/methodToObject.png"alt="Adding property to a constructor">
-				<h2>INHERITANCE</h2>
-				<img src="images/topic2/inheritance.png"alt="Inheritance"><br>
-				<img src="images/topic2/updateValues.png" alt="Update values">
-				<br><br>
-				<form class ="form1">
-				  <h3>ADD NEW STUDENT</h3>
-				  <label for="fname">First Name</label>
-				  <input type="text" id="fname" name="fname">
-				  <label for="lname">Last Name</label>
-				  <input type="text" id="lname" name="lname">
-				  <label for="passp">Passport</label>
-				  <input type="text" id="passp" name="passp"  placeholder="Only numbers...">
-				  <label for="gender">Gender</label>
-				  <input type="text" id="gender" name="gender">
-				  <label for="age">Age</label>
-				  <input type="text" id="age" name="age" placeholder="Only numbers...">
-				  <label for="grade">Grade</label>
-				  <input type="text" id="grade" name="grade" placeholder="Only numbers...">
-                  <button type="button" onclick="insertStudent()">Add Student</button>	
-				</form>
+                <h3 class="titleContent">TOPIC 2: Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h3>
+                <form class ="form1">
+                    <fieldset>
+                       <legend>Personal information:</legend>
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="fname">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lname">
+                            <label for="passp">Passport</label>
+                            <input type="text" id="passp" name="passp"  placeholder="Only numbers...">
+                            <label for="gender">Gender</label>
+                            <input type="text" id="gender" name="gender">
+                            <label for="age">Age</label>
+                            <input type="text" id="age" name="age" placeholder="Only numbers...">
+                            <label for="grade">Grade</label>
+                            <input type="text" id="grade" name="grade" placeholder="Only numbers...">
+                            <button class="button button1" type="button" onclick="insertStudent()">ADD STUDENT</button>	
+                    </fieldset>
+		</form>
 				
-				<br>
-				<form class ="form1">
-				  <h3>Enter Passport</h3>
-				  <label for="passport">Passport</label>
-				  <input type="text" id="passport" name="passport"  placeholder="Only numbers...">
-                  <button type="button" onclick="findStudent()">FIND STUDENT</button>	
-				</form>
-				
-				<br>
+                <br>
+                <form class ="form1">
+                    <fieldset>
+                        <legend>Personal information:</legend>
+                            <h3>Enter Passport</h3>
+                            <p class="findPerson" id="fname2"></p>
+                            <label for="passport">Passport</label>
+                            <input type="text" id="passport" name="passport"  placeholder="Only numbers...">
+                            <button class="button button1" type="button" onclick="findStudent()">FIND STUDENT</button>
+                    </fieldset>
+                </form>
+
+                <br>
 				
 				
 		
-				  <p id="fname2"></p>
-				  <p id="lname2"></p>
-				  <p id="passp2"></p>
-				  <p id="gender2"></p>
-				  <p id="age2"></p>
-				  <p id="grade2"></p>
-                 
+                
+				  
 				
 				
 
                 <!-- original list -->
-                <h3>Original list</h3>
-                <p id="list"></p><br>
+                <h3>List of students</h3>
+                <p id="list"></p>
 
 
                 <!-- Sort list by Grade -->
                 <h3>Sort list by Grade</h3>
-                <p id="sortList"></p><br>
+                <p id="sortList"></p>
 
 
                 <!-- Best students -->
