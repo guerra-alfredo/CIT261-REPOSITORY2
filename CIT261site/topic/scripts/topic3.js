@@ -1,20 +1,20 @@
     var fn,ln,ps,ag,ge,gr;
     var objStudent;
 
-	//Constructor, this allow to create many objects.
-	function NewStudent(fname,pport,gder,grade){
-		this.firstName = fname;
-		this.passport = pport;
-		this.gender = gder;
-		this.grade = grade;
-	}
+    //Constructor, this allow to create many objects.
+    function NewStudent(fname,pport,gder,grade){
+        this.firstName = fname;
+        this.passport = pport;
+        this.gender = gder;
+        this.grade = grade;
+    }
 
 
 //Default List
     //Creating Object with the keyword new.
-	var alum1 = new NewStudent("Peter",1111,"male",8);
-	var alum2 = new NewStudent("Michael",2222,"male",9);
-	var alum3 = new NewStudent("Luis",3333,"male",6);
+    var alum1 = new NewStudent("Peter",1111,"male",8);
+    var alum2 = new NewStudent("Michael",2222,"male",9);
+    var alum3 = new NewStudent("Luis",3333,"male",6);
 
 
     //load a list of students into an array.
@@ -22,7 +22,7 @@
                 
 
     //insert a new student into an array.
-	//var alum4 = new NewStudent("Denise","Calle",4444,"female",35,10);
+    //var alum4 = new NewStudent("Denise",4444,"female",35);
     //student.push(alum4);
    
     //display all student inside the array.
@@ -33,11 +33,11 @@
 	function findStudent(){
         ps = parseInt(document.getElementById("passport").value);
 		
-		//Retriving Data stored
-		var getList = localStorage.getItem("listStudent");
-		var retrieveArray = JSON.parse(getList);
-		
-		displayStudentByPassoport(ps,retrieveArray);
+            //Retriving Data stored
+            var getList = localStorage.getItem("listStudent");
+            var retrieveArray = JSON.parse(getList);
+            
+            displayStudentByPassoport(ps,retrieveArray);
 	}
 
 	//Delete data store inside the browser
@@ -49,19 +49,25 @@
 
 	//Display a student by Passport.
     function displayStudentByPassoport(ps,retrieveA){
-		var passport = ps;
+	var passport = ps;
         var x;
         var txt = "";
+        var ifExistAlu = false;
         //read each object inside of Array.
         for (i=0; i < retrieveA.length;i++){
             var alu = retrieveA[i];
             //read each atribute of an object one by one. 
             for (x in alu) {
-				if (alu.passport == passport){
-				   document.getElementById("studentData").innerHTML = "Full Name"+": "+alu.firstName+";  Passport: "+alu.passport+";  Gender: "+alu.gender+";  Grade: "+alu.grade;
-				   break;
-				}
+                if (alu.passport == passport){
+                   ifExistAlu = true;
+                   document.getElementById("studentData").innerHTML = "<h2>"+"Full Name"+": "+alu.firstName+";  Passport: "+alu.passport+";  Gender: "+alu.gender+";  Grade: "+alu.grade+"</h2>";
+                   break;
+                }
              }
+        }
+        // if there student doesn't not exist, I will display a message. 
+        if(!ifExistAlu){
+            document.getElementById("studentData").innerHTML = "<h2>"+"Student not found"+"</h2>";
         }
     }
 
@@ -77,8 +83,10 @@
 		    alert("Please fill all fields!\nTo add another student");
 		} else {
 			
-			objStudent = {firstName: fn, passport: ps, gender: ge, grade: gr};
-			
+			//objStudent = {firstName: fn, passport: ps, gender: ge, grade: gr};
+                        //working with constructor. 
+			objStudent = new NewStudent (fn,ps,ge,gr);
+                        
 			//Send an object to a function to know if the student exist return a boolean
 			var existStudent = ifExistStudent(objStudent);
 			
@@ -89,13 +97,14 @@
 				//save the object into an array.
 				student.push(objStudent);
 				
-				//Store data
+				//Convert the array into text to save it into local Storage.
 				var stJson = JSON.stringify(student);
 				localStorage.setItem("listStudent",stJson);
 				
 				
-				//Retriving Data
+				//Retriving Data from local storage.
 				var getList = localStorage.getItem("listStudent");
+                                //convert the retriving data into JS.
 				var objList = JSON.parse(getList);
 				//document.getElementById("list").innerHTML = objList[0].firstName+"<br>";
 				
@@ -112,20 +121,20 @@
 	}
 
 
-	//Look if a student existe by their passport. 
+    //Look if a student existe by their passport. 
     function ifExistStudent(inputStudent){
         var x;
         var txt = "";
-		//get the value from a property.
-		var passPortStudent = inputStudent.passport;
+        //get the value from a property.
+        var passPortStudent = inputStudent.passport;
         //read each object inside of Array.
         for (i=0; i < student.length;i++){
             var alu = student[i];
             //read each atribute of an object one by one. 
             for (x in alu) {
-				if (alu.passport == passPortStudent){
-					return true;
-				}
+                if (alu.passport == passPortStudent){
+                        return true;
+                }
                 
              }
         }
@@ -136,7 +145,7 @@
     function displayStudent(){
         var x;
         var txt = "";
-        //read each object inside of Array.
+        //read each object inside the Array.
         for (i=0; i < student.length;i++){
             var alu = student[i];
             //read each atribute of an object one by one. 
