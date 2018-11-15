@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CSS TRANSFORM</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+        <link href="styles/large12.css" rel="stylesheet">
+
+	</head>
+	
+	<body>
+        
+        <div class="content">	
+            <main class="spaceAround">
+                <a href="../index.html"><img src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+                 
+                <h2>The rotate Method 2D</h2>
+        <div class="explains2">         
+<pre>
+
+function checkRotate2D() {
+
+    <strong class="clorComment">//through the id of the checkbox I verify if it is checked</strong>
+    <strong class="clorComment">//I receive a true value.</strong>
+    var op1 = document.getElementById("op1").checked;
+    var op2 = document.getElementById("op2").checked;
+    
+    <strong class="clorComment">//the "rotateMe" is an id inside a Div, represent the square</strong>
+    switch(true) {
+    case op1:
+        <strong class="clorComment">//I change the color of the square</strong>
+        document.getElementById<strong class="clor">("rotateMe")</strong>.style.backgroundColor = <strong class="clor">"#00FF40"</strong>;
+        <strong class="clorComment">// I rotate the square 90 deg</strong>
+        document.getElementById<strong class="clor">("rotateMe")</strong>.style.transform = <strong class="clor">"rotate(90deg)"</strong>;
+        break;
+    case op2:
+         ...
+</pre>
+        
+        </div><br>
+                
+                <div id="rotateMe"><p>Rotate Me!</p></div><br>
+                <form>
+                  <input onclick="checkRotate2D()" type="radio" name="colors" id="op1">90dg<br><br>
+                  <input onclick="checkRotate2D()" type="radio" name="colors" id="op2">180dg<br><br>
+                  <input onclick="checkRotate2D()" type="radio" name="colors" id="op3">360dg<br><br>
+                  <input onclick="checkRotate2D()" type="radio" name="colors" id="op4">-90dg<br><br>
+                  <input onclick="checkRotate2D()" type="radio" name="colors" id="op5">-180dg<br><br>
+                  <input onclick="checkRotate2D()" type="radio" name="colors" id="op6">-360dg
+                </form>
+
+                <h2>The translate Method</h2>
+        <div class="explains2">         
+<pre>
+
+function checkTranslate() {
+
+    <strong class="clorComment">//through the id of the checkbox I verify if it is checked</strong>
+    <strong class="clorComment">//I receive a true value.</strong>
+    var op1 = document.getElementById("op1").checked;
+    var op2 = document.getElementById("op2").checked;
+    
+    <strong class="clorComment">//the "moveMe" is an id inside a Div, represent the square</strong>
+    switch(true) {
+    case op1:
+        <strong class="clorComment">//I change the color of the square</strong>
+        document.getElementById<strong class="clor">("moveMe")</strong>.style.backgroundColor = <strong class="clor">"#00FF40"</strong>;
+        <strong class="clorComment">// I translate the square 200px X-axis</strong>
+        document.getElementById<strong class="clor">("moveMe")</strong>.style.transform = "<strong class="clor">translate(200px,0px)</strong>";
+        break;
+    case op2:
+         ...                
+</pre>
+        
+        </div><br>
+                
+        
+                <div id="moveMe"><p id="name">Move Me!</p></div><br>
+                <form>
+                   <input onclick="checkTranslate()" type="radio" name="colors" id="opp1">200px, 0px<br><br>
+                   <input onclick="checkTranslate()" type="radio" name="colors" id="opp2">200px, 200px<br><br>
+                   <input onclick="checkTranslate()" type="radio" name="colors" id="opp3">0px, 0px<br><br> 
+                </form>
+
+                <h2>The scale Method</h2>
+<pre>
+(x,y) x = width ; y = height
+<strong class="clorComment">modify the original size.</strong>
+</pre>
+
+                <div id="scaleMe"><p id="name2">Scale Me!</p></div><br>
+
+                <form class="moveUp">
+                  <input onclick="checkScale()" type="radio" name="colors" id="oppp1">1,2<br><br>
+                  <input onclick="checkScale()" type="radio" name="colors" id="oppp2">3,2<br><br>
+                  <input onclick="checkScale()" type="radio" name="colors" id="oppp3">2,2<br><br> 
+                </form>  
+
+                <br>
+                <h2>CSS 3D Transforms rotate method</h2>  
+                <p>01.- This example rotate a ball, each time you want to see the effect after clicked the button, <strong class="clorComment">please reload the browser because the effect its saved</strong>, for instance if the image rotate 360dg it remains the same, so it is necesary to reload the browser to get the default values, <strong class="clorComment">when clicked the button move the mouse over the ball to see the effect.</strong>
+                </p>
+                <div class="parentDiv3">
+                    <div class="ball"><img id="rotateBall" src="img/balon.png" alt="Rotate ball" height="200" width="200"></div>
+                </div>
+               <!--  <form>
+                 <input onclick="checkRotate3D()" type="radio" name="rotate3dd" id="opppp1">Rotate Z - After clicked move the mouse over the ball<br><br>
+                  <input onclick="checkRotate3D()" type="radio" name="rotate3dd" id="opppp2">Rotate Y<br><br>
+                  <input onclick="checkRotate3D()" type="radio" name="rotate3dd" id="opppp3">Rotate X<br><br> 
+                </form> -->
+                
+                <br><br>
+                <button onclick="checkRotate31D()">Rotate Z-axis</button>
+                
+                <br><br>
+                <div class="parentDiv3">
+                    <div class="ball"><img id="rotateBall2" src="img/balon.png" alt="Rotate ball" height="200" width="200"></div>
+                </div>
+                <br><br>
+                <button onclick="checkRotate32D()">Rotate X-axis</button>
+                
+                <br><br>
+                <div class="parentDiv3">
+                    <div class="ball"><img id="rotateBall3" src="img/balon.png" alt="Rotate ball" height="200" width="200"></div>
+                </div>
+                <br><br>
+                <button onclick="checkRotate33D()">Rotate Y-axis</button>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <p>02.- This example has the rotate and translate element from the transform property. 
+                        In this example the elephant rotate when <strong class="clorComment">I move the mouse over him</strong>, and then  when <strong class="clorComment">I clicked </strong> over the elephant , it moves far away from the mouse by using the translate property
+                </p> 
+<div class="explains">
+   <pre>
+
+    <strong class="clorComment">//the hover event, run the code when I move the mouse over the elephant.</strong> 
+    .moveMe2:<strong class="clor">hover</strong>{<br>
+        <strong class="clorComment">//this code rotate the elephant 30deg.</strong>
+         transform: <strong class="clor">rotate</strong>(30deg);<br>
+         <strong class="clorComment">//This said how much the animation must last.</strong>
+         <strong class="clor">-webkit-transition</strong>: 3s;  /* For Safari 3.1 to 6.0 */
+         <strong class="clor">transition</strong>: 3s;          /* Others browsers */
+    }
+    
+    <strong class="clorComment">//sending (this) allows to change the current property of the owner element</strong>
+    onclick="<strong class="clor">moveMe(this)</strong>" 
+   
+    <strong class="clorComment">//When I clicked over the elephant its moves 160px far away 
+    the mouse, to do that I am using Transform translate</strong>
+    function moveMe(moveImg){   
+        moveImg.style.transform = "<strong class="clor">translateX(160px)</strong>"; 
+    }   
+   </pre>
+</div>
+                <div class="flex-container">
+                    <div class="flexItem2"><img src="img/mause.png" alt="mause" height="80" width="80"></div>
+                     <div class="flexItem1"><img onclick="moveMe(this)" class="moveMe2" src="img/elephant.png" alt="elephant" height="200" width="220"></div>
+                </div>
+
+            </main>
+
+        </div>
+        <script src="scripts/topic12.js"></script>
+	</body>
+</html>
