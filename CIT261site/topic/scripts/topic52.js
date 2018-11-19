@@ -48,9 +48,6 @@ function displayListPerson(ps){
                 var textnode = document.createTextNode("Name: "+alu.firstName+"  -   Favorite Sport: "+alu.sport);
                 node.appendChild(textnode);
                 document.getElementById("myList").appendChild(node);
-
-
-
                break;
          }
     }
@@ -101,14 +98,11 @@ function displayListPerson2(ps){
         //read each atribute of an object one by one. 
         for (x in alu) {
 
-                var node = document.createElement("LI");
-                var textnode = document.createTextNode("Name: "+alu.firstName+"  -   Favorite Sport: "+alu.sport);
-                node.appendChild(textnode);
-                document.getElementById("myList2").appendChild(node);
-
-
-
-               break;
+            var node = document.createElement("LI");
+            var textnode = document.createTextNode("Name: "+alu.firstName+"  -   Favorite Sport: "+alu.sport);
+            node.appendChild(textnode);
+            document.getElementById("myList2").appendChild(node);
+            break;
          }
     }
 }

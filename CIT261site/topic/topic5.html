@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+            <meta charset="utf-8">
+            <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+                    <meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+                    <meta name="viewport" content="width=device-width, initialscale=1">
+                    <link rel="stylesheet" href="styles/normalize.css">
+            <link href="styles/large5.css" rel="stylesheet">
+	</head>
+	
+	<body>
+            <div class="content">	
+                <header class="spaceAround">
+                    <a href="../index.html"><img id="sizeLink" src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+                    <h3>TOPIC 5: Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h3>
+                </header>
+                <nav>
+                    <!-- future main memu -->
+                </nav>
+
+                <main class="spaceAround">
+                    <p>Web Storage allows to store data within the browser client, this is more secure than using cookies, and allows to store more data than cookies at least (5MB)</p>
+                    <!-- <div id="result"></div>
+                    <div id="result2"></div> -->
+                    
+                    <h1>LOCAL STORAGE</h1>
+                    <br>
+                    <p><strong>Example 01</strong> add users hobbies, in this case each person is addedd to an object to finally be added into an array,
+                    keep in mind that I am using things learned in the previous lesson, so for this case I am using constructor to add
+                    each new person, the entire array is converted into string to save the data into LOCAL STORAGE</p>
+                    <form class ="form1">
+                        <h3>Input your favorite sport !</h3>
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="fname">
+
+                        <label for="age">Age</label>
+                        <input type="text" id="age" name="age"  placeholder="Only numbers...">
+
+                        <label for="gender">Gender</label>
+                        <input type="text" id="gender" name="gender">
+
+                        <label for="sport">Choose a sport</label>
+                        <select id="sport">
+                          <option>Cycling</option>
+                          <option>Football</option>
+                          <option>Golf</option>
+                          <option>Basketball</option>
+                          <option>Climbing</option>
+                        </select>
+                        <br><br>
+                        <button type="button" onclick="saveSport()">Save</button>	
+                    </form>
+
+
+                    <br>
+                    <p><strong>Example 02</strong> If you saved a hobby person you could see that despite you close the browser
+                    the data remains, it is because all the data is saved into a permanent local storage, in others words it is saved into your browser.</p>
+                    <h3>LIST OF PEOPLE WITH LOCAL STORAGE</h3>
+                    <ol id="myList">
+                      <li><strong>Nothing yet!</strong></li>
+                    </ol>
+
+                    <br><br>
+                    <p><strong>Example 03</strong> If you click the button, and close and open the project, you will see that the data is not there any more
+                    it is because it was deleted from the local storage</p>
+                    <div class="center">
+                        <button class="button button2" type="button" onclick="deleteStorageItems()">Delete Storage Items</button>
+                    </div>
+
+                    <br><br>
+                    <h1>SESSION STORAGE</h1>
+                    <br>
+                    <p><strong>Example 04</strong> to this example I saved temporally the data in your browser, in other words after
+                    you saved hobbies users the only thing you need to do to delete the data is to close and open the browser</p>
+                    <form class ="form1">
+                        <h3>Input your favorite sport !</h3>
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname2" name="fname">
+
+                        <label for="age">Age</label>
+                        <input type="text" id="age2" name="age"  placeholder="Only numbers...">
+
+                        <label for="gender">Gender</label>
+                        <input type="text" id="gender2" name="gender">
+
+                        <select id="sport2">
+                          <option>Cycling</option>
+                          <option>Football</option>
+                          <option>Golf</option>
+                          <option>Basketball</option>
+                          <option>Climbing</option>
+                        </select>
+                        <br><br>
+                        <button type="button" onclick="saveSport2()">Save</button>	
+                    </form>
+
+
+                    <h3>LIST OF PEOPLE WITH SESSION STORAGE</h3>
+                    <ol id="myList2">
+                      <li><strong>Nothing yet!</strong></li>
+                    </ol>
+
+                </main>
+                <footer>
+                                    <br><br>
+                    <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+                </footer>
+            </div>
+            <!-- <script src="scripts/topic3.js"></script> -->
+
+            <script src="scripts/topic52.js"></script>
+            <script src="scripts/topic5.js"></script>
+    
+	</body>
+    
+    
+</html>

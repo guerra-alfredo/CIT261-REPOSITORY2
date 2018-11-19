@@ -21,21 +21,24 @@ function saveSport(){
     var x = document.getElementById("sport").selectedIndex;
     var y = document.getElementById("sport").options;
 
+    //This allows to get the text of the option. 
     sp = y[x].text;
 
     //Creating Object with the keyword new.
     var objSport = new NewHobby(fn,ag,ge,sp);
 
     person.push(objSport);
+    //I convert the entire array into string to use it in the local storage. 
     var personArray = JSON.stringify(person);
 
     // Check browser support
     if (typeof(Storage) !== "undefined") {
-        // Store
+        // Store the array.
         localStorage.setItem("personHobby",personArray);
         // Retrieve
         //document.getElementById("result").innerHTML = localStorage.getItem("personHobby");
         var arrayStored = localStorage.getItem("personHobby");
+        //I convert the string into an array to use with JS.
         var objStored = JSON.parse(arrayStored);
         displayListPerson(objStored);
     } else {
@@ -50,7 +53,7 @@ function displayListPerson(ps){
 
     //$("#myList").remove();
 
-    //allows to remove all child items. 
+    //allows to remove all child items to clear the element before to show the data. 
     removeChildItems();
 
     //read each object inside of Array.
@@ -83,23 +86,16 @@ function deleteStorageItems(){
      // Check browser support 
     if (typeof(Storage) !== "undefined") {
         localStorage.removeItem("personHobby");
-
-
+        
         //remove child items. 
-
         var list = document.getElementById("myList");
         while (list.hasChildNodes()) {
             list.removeChild(list.firstChild);
         }
-
-
-
         alert("The stored data was deleted!");
     } else {
         alert("Sorry, your browser does not support Web Storage...");
     }
-
-
 }
 
 ///////////////////////////////////////////////////SESSION STORAGE///////////////////////////////////////////////
