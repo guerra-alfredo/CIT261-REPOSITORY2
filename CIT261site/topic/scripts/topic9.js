@@ -38,10 +38,52 @@ document.getElementsByClassName('toggleButton2')[0].ondblclick = function() {
   }  
 }
 
+//Example 05
+// Save the square into a variable to change their properties.
+var boxColor = document.getElementById("box");
+document.getElementById("touch5").addEventListener("touchstart", changeColor5);
+function changeColor5() {
+   boxColor.style.backgroundColor = "#FF0000";
+}
+document.getElementById("touch6").addEventListener("touchstart", changeColor6);
+function changeColor6() {
+   boxColor.style.backgroundColor = "#00FF00";
+}
+document.getElementById("touch7").addEventListener("touchstart", changeColor7);
+function changeColor7() {
+   boxColor.style.backgroundColor = "#0000FF";
+}
+document.getElementById("touch8").addEventListener("touchstart", changeColor8);
+function changeColor8() {
+   boxColor.style.backgroundColor = "#FFFF00";
+}
+document.getElementById("touch9").addEventListener("touchstart", changeColor9);
+function changeColor9() {
+   boxColor.style.backgroundColor = "#CCEEFF";
+}
+document.getElementById("touch10").addEventListener("touchstart", changeColor10);
+function changeColor10() {
+   boxColor.style.backgroundColor = "black";
+}
+document.getElementById("touch11").addEventListener("touchstart", changeColor11);
+function changeColor11() {
+   boxColor.style.backgroundColor = "white";
+}
 
-  var op1 = document.getElementById("touch1");
-op1.addEventListener("click", backgroundPage);
-function backgroundPage(event) {
+////////////////////////////////////////////////////////////////////////////
+
+//Example 6
+document.getElementById("box").addEventListener("touchend", leaveThisBox);
+function leaveThisBox() {
+   document.getElementById("box").style.WebkitTransform = "rotate(20deg)";
+   document.getElementById("box").style.msTransform = "rotate(20deg)"; 
+   document.getElementById("box").style.transform = "rotate(20deg)"; 
+}
+
+
+
+document.getElementById("touch1").addEventListener("click", backgroundPage);
+function backgroundPage() {
    document.body.style.backgroundColor = "coral";
 }
 
