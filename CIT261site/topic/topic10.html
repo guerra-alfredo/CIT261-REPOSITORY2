@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>HTML5 TAGS</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+        <link href="styles/large10.css" rel="stylesheet"> 
+        
+        
+	</head>
+	
+	<body>
+        <div class="content">	
+            <header class="spaceAround">
+                <a href="../index.html"><img src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+            </header>
+			
+            <main class="spaceAround">
+				<h2>TOPIC 10: HTML5 Tags - Video, Audio, and Canvas</h2>
+                <p><strong>VIDEO</strong>: This tag only support MP4, WebM, and Ogg</p>
+                
+                <div class="explains">
+<pre>
+   
+   // <strong class="clorComment">Note: I removed the opening and close tag symbol.</strong>
+    
+    <strong class="clorComment">//controls attribute adds video controls, like play, pause, and volume.</strong>
+    <strong class="clor">video</strong> class="videoSetting" <strong class="clor">controls</strong>
+        <strong class="clor">source</strong> src="video/week6.mp4" type="<strong class="clor">video/mp4</strong>"
+        // <strong class="clorComment">default message.</strong>
+        Your browser does not support the video tag.
+    <strong class="clor">/video</strong>
+</pre>
+                </div>
+                <br><br>
+                
+                
+                <video class="videoSetting" controls>
+                  <source src="video/Pexels.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video><br><br>
+                
+                
+                <p><strong>AUDIO</strong>: This tag only support MP3, Wav, and Ogg</p>
+                <div class="explains">
+<pre>
+
+   // <strong class="clorComment">Note: I removed the opening and close tag symbol.</strong>
+    
+    <strong class="clorComment">//controls attribute adds audio controls, like play, pause, and volume.</strong>
+    <strong class="clor">audio</strong> class="audioSetting" <strong class="clor">controls</strong>
+        <strong class="clor">source</strong> src="audio/risas.mp3" type="<strong class="clor">audio/mpeg</strong>"
+        // <strong class="clorComment">default message.</strong>
+        Your browser does not support the audio element.
+    <strong class="clor">/video</strong>
+</pre>
+                </div>
+                
+                <br>
+                <audio controls class="audioSetting">
+                  <source src="audio/risas.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio>
+              
+                <h2>Cavas used for drawing graphics as shown below.</h2>
+                
+                <p>1.- draw a triangle</p>
+                <canvas id="myCanvas1" width="600" height="300"
+                style="border:1px solid #d3d3d3;">
+                Your browser does not support the canvas element.
+                </canvas>
+                <br><br>
+                <br>
+                <p>2.- draw a rectangle and square</p>
+                <canvas id="myCanvas2" width="600" height="300"
+                style="border:1px solid #d3d3d3;">
+                Your browser does not support the canvas element.
+                </canvas>
+                
+                <p>3.-draw a circle</p>
+                <canvas id="myCanvas3" width="600" height="300"
+                style="border:1px solid #d3d3d3;">
+                Your browser does not support the canvas element.
+                </canvas>
+                
+                
+                <script>
+
+                var canvas = document.getElementById("myCanvas1");
+                var ctx = canvas.getContext("2d");
+               
+                //moveTo(x,y) - defines the starting point of the line
+                //lineTo(x,y) - defines the ending point of the line
+                // the triangle
+                ctx.beginPath();
+                //First Line
+                ctx.moveTo(300,0);
+                ctx.lineTo(0,300);
+                
+                //Second Line
+                ctx.moveTo(300,0);
+                ctx.lineTo(600,300);
+                ctx.closePath();
+                
+                var canvas2 = document.getElementById("myCanvas2");
+                var ctx2 = canvas2.getContext("2d");
+                
+                // fill color
+                ctx2.fillStyle = "#FFCC00";
+                //ctx.fill();
+                ctx2.fillRect(150,10,300,100);
+                
+                ctx2.fillStyle = "blue";
+                ctx2.fillRect(225,120,150,150);
+
+                //arc(x,y,r,startangle,endangle) - creates an arc/curve. To create a circle with arc(): Set start angle to 0 and end angle to 2*Math.PI. The x and y parameters define the x- and y-coordinates of the center of the circle. The r parameter defines the radius of the circle.
+                var canvas3 = document.getElementById("myCanvas3");
+                var ctx3 = canvas3.getContext("2d");
+                ctx3.beginPath();
+                ctx3.arc(300,150,120,0,2*Math.PI);
+                ctx3.stroke();
+
+
+                // the outline
+                ctx.lineWidth = 5;
+                ctx2.lineWidth = 5;
+                ctx3.lineWidth = 5;
+                ctx.strokeStyle = 'gray';
+                ctx2.strokeStyle = 'gray';
+                ctx3.strokeStyle = 'gray';
+                ctx.stroke();
+                ctx2.stroke();
+                ctx3.stroke();
+
+
+
+
+                </script>
+                
+            </main>
+			
+			<br><br>
+            <footer>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+        <script src="scripts/topic11.js"></script>
+	</body>
+</html>
