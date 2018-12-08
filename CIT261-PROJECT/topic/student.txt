@@ -1,0 +1,11 @@
+{
+	"Name":"John",
+	"Age":31,
+	"Gender":"Male",
+	"Courses":[
+	        { "season":"Winter", "name":"CIT-160", "finalGrade":"A" },
+	        { "season":"Winter", "name":"WDD-100", "finalGrade":"A"  },
+	        { "season":"Fall", "name":"CIT-230", "finalGrade":"-A"  },
+	        { "season":"Winter", "name":"CIT-261", "finalGrade":"Nothing yet"}
+		]
+}

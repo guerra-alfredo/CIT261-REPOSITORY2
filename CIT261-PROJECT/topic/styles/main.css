@@ -1,0 +1,63 @@
+/* CIT 230 - Assignment Portal CSS Template */
+/* You may use #HEX or color names */
+
+/* * is a wildcard referring to all elements. */
+* { margin: 0; box-sizing: border-box; } 
+
+body { 
+    font-size: 16px; 
+    line-height: 32px;
+    font-family: 'Indie Flower', cursive;
+    color: #0101DF;
+}
+
+#mainTop{
+    /* background-color: #58D3F7; */
+    background-color: #008CBA;
+    height: 70px;
+}
+#mainTitle{
+    /* color: #FF8000; */
+    color: white;
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+} 
+
+.flex-container > div {
+  margin: 5px;
+  text-align: center;
+}
+
+
+.flex-container2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* background-color: DodgerBlue;*/
+} 
+
+.flex-container2 > div {
+  margin: 5px;
+  text-align: center;
+}
+
+#positionPencil{
+    margin-top: 100px;
+}
+
+.imgOverlay{
+    width: 250px;
+   -webkit-transition: width 3s; /* For Safari 3.1 to 6.0 */
+    transition: width 3s;
+}
+
+
+.imgOverlay:hover{
+    width: 320px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+            <meta charset="utf-8">
+            <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+            <meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+            <meta name="viewport" content="width=device-width, initialscale=1">
+            <link rel="stylesheet" href="styles/normalize.css">
+            <link href="styles/large.css" rel="stylesheet">
+	</head>
+	
+	<body>
+        <div class="content">	
+            <header class="spaceAround">
+                <a href="../index.html"><img id="sizeLink" src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+            </header>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+			
+            <main class="spaceAround">
+                <h3 class="titleContent">TOPIC 2: Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h3>
+                <form class ="form1">
+                    <fieldset>
+                       <legend>Personal information:</legend>
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="fname">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lname">
+                            <label for="passp">Passport</label>
+                            <input type="text" id="passp" name="passp"  placeholder="Only numbers...">
+                            <label for="gender">Gender</label>
+                            <input type="text" id="gender" name="gender">
+                            <label for="age">Age</label>
+                            <input type="text" id="age" name="age" placeholder="Only numbers...">
+                            <label for="grade">Grade</label>
+                            <input type="text" id="grade" name="grade" placeholder="Only numbers...">
+                            <button class="button button1" type="button" onclick="insertStudent()">ADD STUDENT</button>	
+                    </fieldset>
+		</form>
+				
+                <br>
+                <form class ="form1">
+                    <fieldset>
+                        <legend>Personal information:</legend>
+                            <h3>Enter Passport</h3>
+                            <p class="findPerson" id="fname2"></p>
+                            <label for="passport">Passport</label>
+                            <input type="text" id="passport" name="passport"  placeholder="Only numbers...">
+                            <button class="button button1" type="button" onclick="findStudent()">FIND STUDENT</button>
+                    </fieldset>
+                </form>
+
+                <br>
+				
+				
+		
+                
+				  
+				
+				
+
+                <!-- original list -->
+                <h3>List of students</h3>
+                <p id="list"></p>
+
+
+                <!-- Sort list by Grade -->
+                <h3>Sort list by Grade</h3>
+                <p id="sortList"></p>
+
+
+                <!-- Best students -->
+                <h3>Best students</h3>
+                <p id="bestStudent"></p>
+
+                <!-- Worst students -->
+                <h3>Worst student</h3>
+                <p id="worstStudent"></p>
+            </main>
+            <footer>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+        <script src="scripts/objectConstructor.js"></script>
+	</body>
+</html>

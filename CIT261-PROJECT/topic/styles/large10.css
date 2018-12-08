@@ -1,0 +1,43 @@
+/** Margin to the entire page **/
+.content{
+    margin: 2% 15% 2% 15%;
+    border: 1px solid black;
+}
+
+
+.explains{
+    background-color: lavender;
+    width: 100%;
+    height: 150px;
+}
+
+.explains2{
+    background-color: lavender;
+    width: 100%;
+    height: 250px;
+}
+
+.clor{
+    color: red;
+}
+
+.clorComment{
+    color: rebeccapurple;
+}
+
+.spaceAround{
+	padding: 10px;
+}
+
+.videoSetting{
+    width:60%;
+    display: block;
+    margin: 0 auto;
+}
+
+.audioSetting{
+   display: block;
+   margin: 0 auto; 
+}
+
+

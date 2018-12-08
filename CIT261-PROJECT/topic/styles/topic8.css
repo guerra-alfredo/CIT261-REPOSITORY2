@@ -1,0 +1,117 @@
+/** Margin to the entire page **/
+.content{
+    margin: 2% 15% 2% 15%;
+    /* border: 1px solid black;*/
+}
+
+.form1{
+	width: 80%;
+	margin: auto;
+}
+
+.spaceAround{
+	padding: 10px;
+}
+
+
+		
+/** END TOPIC 7 **/
+
+/** TOPIC 8 **/
+
+.universe{
+    width: 100%;
+    height: 800px;
+    /*background-color: black;*/
+}
+
+#centerImg{
+    text-align: center;
+}
+
+#sun{
+    margin-top: 200px;
+    width: 30%;
+}
+
+
+#earth{
+    margin-top: -200px;
+    width: 14%;
+}
+
+#jupiter{
+    margin-top: 120px;
+    margin-left: 800px;
+    width: 30%;
+}
+
+
+
+
+.moveThePlanet{
+    position: relative;
+    -webkit-animation-name: rotatePlanet; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 40s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
+    animation-name: rotatePlanet;
+    animation-duration: 40s;
+    animation-iteration-count: 3;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes rotatePlanet {
+
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:-300px;}
+    50%  {left:750px; top:-450px;}
+    75%  {left:11000px; top:130px;}
+    100% {left:0px; top:0px;}
+    
+    
+}
+
+/* Standard syntax */
+@keyframes rotatePlanet {
+  
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:-300px;}
+    50%  {left:750px; top:-450px;}
+    75%  {left:1100px; top:130px;}
+    100% {left:0px; top:0px;}
+}
+
+
+.moveThePlanet2{
+    position: relative;
+    -webkit-animation-name: rotatePlanet2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 40s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
+    animation-name: rotatePlanet2;
+    animation-duration: 40s;
+    animation-iteration-count: 3;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes rotatePlanet2 {
+    0%   {left:0px; top:0px;}
+    20%  {left:-300px; top:30px;}
+    40%  {left:-600px; top:-150px;}
+    60%  {left:-800px; top:-650px;}
+    80%  {left:120px; top:-800px;}
+    100% {left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes rotatePlanet2 {
+    0%   {left:0px; top:0px;}
+    20%  {left:-300px; top:30px;}
+    40%  {left:-600px; top:-150px;}
+    60%  {left:-800px; top:-650px;}
+    80%  {left:120px; top:-800px;}
+    100% {left:0px; top:0px;}
+}
+
+
+
+

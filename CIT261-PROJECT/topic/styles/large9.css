@@ -1,0 +1,233 @@
+/** Margin to the entire page **/
+.content{
+    margin: 2% 15% 2% 15%;
+    border: 1px solid black;
+}
+
+.right{
+	float: right;
+	margin: auto;
+}
+.spaceAround{
+	padding: 10px;
+}
+
+
+.explains{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 130px;
+}
+
+
+.explains2{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 200px;
+}
+
+.explains3{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 500px;
+    margin-top: -700px;
+}
+
+.explains4{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 260px;
+}
+
+.clor{
+    color: red;
+}
+
+.clorComment{
+    color: rebeccapurple;
+}
+
+
+
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
+.box {
+    opacity: 0;
+    margin-left: 400px;
+
+  
+  
+}
+
+.box.horizTranslate {
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+  margin-left: 30%;    
+    
+    
+  position: relative;
+ -webkit-animation: myfirst 10s linear 1s  normal; /* Safari 4.0 - 8.0 */
+  animation: myfirst 10s linear 1s  normal;
+}
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes myfirst {
+    0%   {left:0px; top: 0px; opacity:0.1; }
+    20%  {left:0px; top:-150px; opacity: 0.3; }
+    40%  {left:0px; top:-300px; opacity: 0.6; }
+    60%  {left:0px; top:-450px; opacity: 1; }
+    80%  {left:0px; top:-600px; opacity: 0; }
+    100%  {left:0px; top:0px; opacity: 0;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    0%   {left:0px; top: 0px; opacity:0.1; }
+    20%  {left:0px; top:-150px; opacity: 0.3; }
+    40%  {left:0px; top:-300px; opacity: 0.6; }
+    60%  {left:0px; top:-450px; opacity: 1; }
+    80%  {left:0px; top:-600px; opacity: 0; }
+    100%  {left:0px; top:0px; opacity: 0;}
+}
+
+
+
+/******   EXAMPLE 2  *******/
+
+
+.box2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50; 
+  font-size: 4rem;
+  text-shadow: 3px 3px 2px #696;
+  
+  /* opacity: 0; */
+  
+  
+}
+
+
+
+.box2.horizTranslate2 {
+    
+  position: relative;
+ -webkit-animation: mySecond 8s alternate  ease-out forwards; /* Safari 4.0 - 8.0 */
+  animation: mySecond 8s alternate ease-out forwards;
+}
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mySecond {
+    
+    /* 0%   {left:0px; top: 0px;}
+    100%  {left:0px; top:200px;} */
+    
+     0%   {left:0px; top: 0px;}
+    10%   {left:0px; top: 50px;}
+    20%   {left:30px; top: 25px;}
+    30%   {left:30px; top: 75px;}
+    40%   {left:60px; top: 50px;}
+    50%   {left:60px; top: 100px;}
+    60%   {left:90px; top: 75px;}
+    100%   {left:90px; top: 125px;}
+}
+
+/* Standard syntax */
+@keyframes mySecond {
+     0%   {left:0px; top: 0px;}
+    10%   {left:0px; top: 50px;}
+    20%   {left:30px; top: 25px;}
+    30%   {left:30px; top: 75px;}
+    40%   {left:60px; top: 50px;}
+    50%   {left:60px; top: 100px;}
+    60%   {left:90px; top: 75px;}
+    100%   {left:90px; top: 125px;}
+}
+
+.moveUP{
+    margin-top: -40px;
+    margin-left: -200px;
+}
+
+
+#touch1, #touch2, #touch3, #touch4, #touch5,#touch6,#touch7,#touch8,#touch9,#touch10,#touch11{
+    width: 80px;
+    height: 80px;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    margin: 0;
+}
+
+#touch1{
+    background-color: coral;
+}
+#touch2{
+    background-color:beige;
+}
+#touch3{
+    background-color:cadetblue;
+}
+#touch4{
+    background-color:azure;
+}
+
+
+#touch5{
+    background-color: #FF0000;
+}
+#touch6{
+    background-color:#00FF00;
+}
+#touch7{
+    background-color:#0000FF;
+}
+#touch8{
+    background-color:#FFFF00;
+}
+#touch9{
+    background-color:#CCEEFF;
+}
+#touch10{
+    background-color: black;
+}
+#touch11{
+    background-color: white;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#box{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+    border-style: solid;
+    border-width: 1px;
+}

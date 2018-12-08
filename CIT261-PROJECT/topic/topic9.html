@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+        <title>CIT 261 Assignment Portal | Alfredo Guerra| BYU-Idaho</title>
+		<meta name="description" content="Assignment portal page for Alfredo Guerra in CIT 261">
+		<meta name="viewport" content="width=device-width, initialscale=1">
+		<link rel="stylesheet" href="styles/normalize.css">
+        <link href="styles/large9.css" rel="stylesheet">
+
+	</head>
+	
+	<body onload="ChangeBody(this)">
+        <div class="content">	
+            <header class="spaceAround">
+                <a href="../index.html"><img id="sizeLink" src="images/backToMain.png" alt="Back to Main" width="310" height="60"></a><br>
+                <h3>TOPIC 9: Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</h3>
+            </header>
+            <nav>
+                <!-- future main memu -->
+            </nav>
+			
+            <main class="spaceAround">
+                
+                <p>1.- To start did you notice the background color, well we are using the <strong class="clor">onload</strong> method, so when the page is loaded the color changes automatically</p>
+<div class="explains">
+<pre>
+
+<strong class="clorComment">//this allows to run this code before anything else</strong>
+body <strong class="clor">onload</strong>="ChangeBody()"
+    //JS
+    function <strong class="clor">ChangeBody()</strong>{
+        document.body.style.<strong class="clor">backgroundColor</strong> = "#F5F6CE";
+    }
+</pre>
+</div>
+                
+                
+                <br>
+                <p>2.- In this example we will be using the <strong class="clor">touchstart</strong> event, but as I am running this code from a computer instead of a smartphone, I will use the click event throught an <strong class="clor">addEventListener event</strong></p>
+                <p>Choose a color by clicking any square</p>
+<div class="explains2">
+<pre>
+
+<strong class="clorComment">//This div have an id call touch1</strong>
+div  id="<strong class="clor">touch1</strong>">coral  /div
+
+<strong class="clorComment">//I am using the EventListener, by the click method.</strong>
+var op1 = document.getElementById("<strong class="clor">touch1</strong>");
+op1.<strong class="clor">addEventListener</strong>("click", <strong class="clor">backgroundPage</strong>);
+function <strong class="clor">backgroundPage</strong>() {
+   document.body.style.<strong class="clor">backgroundColor</strong> = "coral";
+}
+  
+</pre>                    
+</div><br>
+             
+                 <!--<button class="button button2" type="button" ondblclick="deleteStorageItems()">Double-click</button>-->
+                <div class="flex-container">
+                    <div id="touch1">coral</div>
+                    <div id="touch2">beige</div>
+                    <div id="touch3">cadetblue</div>
+                    <div id="touch4">azure</div>
+                </div>
+                
+                <p>3.- This example use <strong class="clor">Animation and transition</strong> to move some colored balloons, first of all by using transition I moved the balloons to the right, despite you could not see how it moves because I am using <strong class="clor">opacity</strong> property to hide this, you will notice that it start from the center, after that I am using animation join with some <strong class="clor">keyframes</strong> to move the balloons upwards  </p>
+                <p>Press The button, this is using the click event</p><br>
+                <button class='toggleButton' value='Play'>Play</button>
+                <div>
+                    <img src="images/topic9/variosG.png"  class='box' alt="globos" >
+                </div> 
+<div class="explains3">
+<pre>
+
+<strong class="clorComment">//the image of balloons has a class call box</strong>
+.box {
+    <strong class="clor">opacity</strong>: 0;
+}
+
+<strong class="clorComment">// I move the image to the right by using transition.</strong>   
+.box.horizTranslate {
+    <strong class="clor">transition</strong>: 0.1s;
+    margin-left: 30%;    
+    position: relative;
+    
+    <strong class="clorComment">//I move the image upwards by using animation.</strong>
+    animation: <strong class="clor">myfirst</strong> 10s linear 1s  normal;
+}
+
+
+<strong class="clorComment">// I increase the opacity each time the image move upwards</strong>
+@keyframes <strong class="clor">myfirst</strong> {
+    0%   {left:0px; top: 0px; opacity:0.1; }
+    20%  {left:0px; top:-150px; opacity: 0.3; }
+    40%  {left:0px; top:-300px; opacity: 0.6; }
+    60%  {left:0px; top:-450px; opacity: 1; }
+    80%  {left:0px; top:-600px; opacity: 0; }
+    100%  {left:0px; top:0px; opacity: 0;}
+}
+</pre>
+
+</div>           
+
+                <p>4.- This example moves a title to the right and then up and down by using animation</p>
+                <p>This button use the <strong class="clor">ondblclick</strong> method</p>
+                <button class='toggleButton2' value='Play'>PLAY - double click me!</button>
+                               
+                
+                
+                
+                <div class="moveUP">
+                    <h1 class='box2'>Welcome Back!</h1>
+                </div>
+                
+        
+                <br><br><br><br><br><br><br>
+                <h2>TouchEvent Only for <strong>Touch Screen</strong> either mobile device or other devices but "Touches"</h2>
+                
+                <!--<button class="button button2" type="button" ondblclick="deleteStorageItems()">Double-click</button>-->
+                <p>5.- This examples uses the touchstart events triggered by addEventListener method, only works on mobile screen devices</p>
+                <h3>Choose a color for the square!</h3>
+                <div class="flex-container">
+                    <div id="touch5"></div>
+                    <div id="touch6"></div>
+                    <div id="touch7"></div>
+                    <div id="touch8"></div>
+                    <div id="touch9"></div>
+                    <div id="touch10"></div>
+                    <div id="touch11"></div>
+                </div><br><br>
+                <div id="box"></div>
+                
+                
+                <p>6.- This examples uses the touchend events triggered by addEventListener method, only works on mobile screen devices</p>
+                <h3>Press the square and leave it, you will see a transform effect.</h3>
+                
+            </main>
+            <footer>
+				<br><br><br><br><br><br><br><br><br>
+                <p>&copy; 2018, Alfredo Guerra, Chile, <a href="http://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
+            </footer>
+        </div>
+        <script src="scripts/topic9.js"></script>
+	</body> 
+                
+</html>

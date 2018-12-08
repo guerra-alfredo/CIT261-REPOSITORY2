@@ -1,0 +1,449 @@
+/** Margin to the entire page **/
+.content{
+    margin: 2% 15% 2% 15%;
+    border: 1px solid black;
+}
+
+.spaceAround{
+	padding: 10px;
+}
+
+
+.explains{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 400px;
+}
+
+
+.explains2{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 450px;
+}
+
+.explains3{
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 380px;
+}
+
+.clor{
+    color: red;
+}
+
+.clorComment{
+    color: rebeccapurple;
+}
+
+.spaceAround{
+	padding: 10px;
+}
+
+
+
+
+/*Example 01*/           
+            .parentDiv{
+                /* This allows the div children to stay inside the div father when they use position absolute */
+                position: relative;
+                width: 100%;
+                height: 320px;
+                background-color:white; 
+            }
+  
+
+            .squeare1{
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+                position: absolute;
+                left: 0;
+                top: 0;
+                -webkit-animation-name: example1; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+                animation-name: example1;
+                animation-duration: 3s;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example1 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:black; left:50px; top:50px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example1 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:black; left:50px; top:50px;}
+
+            }
+            
+            .squeare2{
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+                position: absolute;
+                left: 0;
+                top: 0;
+                -webkit-animation-name: example2; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+                animation-name: example2;
+                animation-duration: 3s;
+                
+                  /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
+                animation-delay: 1s;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example2 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:red; left:75px; top:75px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example2 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:red; left:75px; top:75px;}
+
+            }
+            
+            .squeare3{
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+                position: absolute;
+                left: 0;
+                top: 0;
+                -webkit-animation-name: example3; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+                animation-name: example3;
+                animation-duration: 3s;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+                
+                  /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+                animation-delay: 2s;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example3 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:black; left:100px; top:100px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example3 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:black; left:100px; top:100px;}
+
+            }
+            
+            .squeare4{
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+                position: absolute;
+                left: 0;
+                top: 0;
+                -webkit-animation-name: example4; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+                animation-name: example4;
+                animation-duration: 3s;
+                
+                  /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 3s; /* Safari 4.0 - 8.0 */
+                animation-delay: 3s;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example4 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:red; left:125px; top:125px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example4 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:red; left:125px; top:125px;}
+
+            }
+            
+            .squeare5{
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+                position: absolute;
+                left: 0;
+                top: 0;
+                -webkit-animation-name: example5; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+                animation-name: example5;
+                animation-duration: 5s;
+                
+                /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 4s; /* Safari 4.0 - 8.0 */
+                animation-delay: 4s;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example5 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:black; left:150px; top:150px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example5 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:black; left:150px; top:150px;}
+
+            }
+            
+            .squeare6{
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+                position: absolute;
+                left: 0;
+                top: 0;
+                -webkit-animation-name: example6; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+                animation-name: example6;
+                animation-duration: 6s;
+                
+                  /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
+                animation-delay: 5s;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example6 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:red; left:175px; top:175px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example6 {
+                0%   {background-color:orange; left:0px; top:0px;}
+                100%  {background-color:red; left:175px; top:175px;}
+
+            }
+            
+/* End Example 01*/ 
+            
+            
+/*Example 02*/           
+            .parentDiv2{
+                /* This allows the div children to stay inside the div father when they use position absolute */
+                position: relative;
+                width: 100%;
+                height: 300px;
+                background-color:white; 
+            }
+  
+
+            .squeare7{
+                position: absolute;
+                left: 0;
+                top: 100px;
+                -webkit-animation-name: example7; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+                animation-name: example7;
+                animation-duration: 5s;
+                
+                
+                 /* Safari 4.0 - 8.0 ---  a slow end  */
+                -webkit-animation-timing-function: ease-out;
+                /* Standard syntax --- a slow end */
+                animation-timing-function: ease-out;
+                
+                /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 4s; /* Safari 4.0 - 8.0 */
+                animation-delay: 4s;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example7 {
+                0%   {left:0px; top:0px;}
+                100%  {left:10%; top:0px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example7 {
+                0%   {left:0px; top:0px;}
+                100%  {left:10%; top:0px;}
+
+            }
+            
+            
+            .squeare8{
+                position: absolute;
+                left: 0;
+                top: 70px;
+                -webkit-animation-name: example8; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+                animation-name: example8;
+                animation-duration: 4s;
+                
+                 /* Safari 4.0 - 8.0 ---  a slow end  */
+                -webkit-animation-timing-function: ease-out;
+                /* Standard syntax --- a slow end */
+                animation-timing-function: ease-out;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+                
+                  /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 3s; /* Safari 4.0 - 8.0 */
+                animation-delay: 3s;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example8 {
+                0%   {left:0px; top:0px;}
+                100%  {left:30%; top:0px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example8 {
+                0%   {left:0px; top:0px;}
+                100%  {left:30%; top:0px;}
+
+            }
+            
+            .squeare9{
+                position: absolute;
+                left: 0;
+                top: 40px;
+                -webkit-animation-name: example9; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+                animation-name: example9;
+                animation-duration: 3s;
+                
+                 /* Safari 4.0 - 8.0 ---  a slow end  */
+                -webkit-animation-timing-function: ease-out;
+                /* Standard syntax --- a slow end */
+                animation-timing-function: ease-out;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+                
+                  /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+                animation-delay: 2s;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example9 {
+                0%   {left:0px; top:0px;}
+                100%  {left:50%; top:0px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example9 {
+                0%   {left:0px; top:0px;}
+                100%  {left:50%; top:0px;}
+
+            }
+            
+            .squeare10{
+                position: absolute;
+                left: 0;
+                top: 10px;
+                -webkit-animation-name: example10; /* Safari 4.0 - 8.0 */
+                -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+                animation-name: example10;
+                animation-duration: 2s;
+                
+                 /* Safari 4.0 - 8.0 ---  a slow end  */
+                -webkit-animation-timing-function: ease-out;
+                /* Standard syntax --- a slow end */
+                animation-timing-function: ease-out;
+                
+               -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+                animation-fill-mode: forwards;
+                
+                  /*  specifies a delay for the start of an animation */
+                -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
+                animation-delay: 1s;
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes example10 {
+                0%   {left:0px; top:0px;}
+                100%  {left:70%; top:0px;}
+            }
+
+            /* Standard syntax */
+            @keyframes example10 {
+                0%   {left:0px; top:0px;}
+                100%  {left:70%; top:0px;}
+
+            }
+            
+            
+/*Example 02*/    
+
+
+/*Example 03*/           
+            .parentDiv3{
+                /* This allows the div children to stay inside the div father when they use position absolute */
+                position: relative;
+                width: 100%;
+                height: 300px;
+                background-color:white; 
+            }
+  
+
+            .ball{
+                position: absolute;
+                left: 40%;
+                top: 0;
+                
+                -webkit-animation: ballExample 1s alternate infinite ease-out; /* Safari 4.0 - 8.0 */
+                animation: ballExample 1s alternate infinite ease-out ;     
+            }
+
+            /* Safari 4.0 - 8.0 */
+            @-webkit-keyframes ballExample {
+                0% { transform: translateY(50%);}
+                100% {transform: translateY(-50%);}
+            }
+
+            /* Standard syntax */
+            @keyframes ballExample {
+                0% {transform: translateY(50%);}
+                100% {transform: translateY(-50%);}
+            }
+            
+        .rotateBall:hover{
+                -ms-transform: rotateZ(360deg); /* IE 9 */
+                -webkit-transform: rotateZ(360deg); /* Safari 3-8 */
+                transform: rotateZ(360deg);
+            
+            -webkit-transition: 8s; /* For Safari 3.1 to 6.0 */
+            transition: 8s;
+        }
+
+
