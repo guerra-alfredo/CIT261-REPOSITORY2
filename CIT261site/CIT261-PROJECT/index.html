@@ -8,13 +8,21 @@
             <link rel="stylesheet" href="styles/normalize.css">
             <link rel="stylesheet" href="styles/main.css">
             <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+            
+            <script>
+                function makeItElegant(setDiv){
+                    setDiv.style.color = "orange";
+                    setDiv.style.opacity = "0.9";
+                    setDiv.style.fontSize = "3.4rem";
+                }
+            </script>
 	</head>
 	
 	<body>
             <header>
                 <div id="mainTop" class="flex-container">
-                    <div><img src="images/elephantSmall.png" alt="Elephant"></div>
-                    <div><h1 id="mainTitle">Elephant Memory</h1></div>
+                    <div><img class="icono" src="images/elephantSmall.png" alt="Elephant"></div>
+                    <div><h1 id="mainTitle" onmouseover="makeItElegant(this)">Elephant Memory</h1></div>
                 </div>
             </header>
             <nav>
@@ -24,22 +32,22 @@
                 <div class="flex-container2">
                     <div class="polaroid">
                         <div id="positionPencil">
-                            <a href="default.asp" target="_blank"><img class="imgOverlay" src="images/pencilSmall.png" alt="pencil"></a>
+                            <a href="topic/color1.html" target="_blank"><img class="imgOverlay" src="images/pencilSmall.png" alt="pencil"></a>
                             <div>
-                                <h3>Colors</h3>
+                                <h2>Colors</h2>
                             </div>
                         </div>
                     </div>
                     <div class="polaroid">
                         <a href="default.asp" target="_blank"><img  class="imgOverlay" src="images/sportSmall.jpg" alt="sport"></a>
                         <div>
-                            <h3>Sports</h3>
+                            <h2>Sports</h2>
                         </div>
                     </div>
                     <div class="polaroid">
                         <a href="default.asp" target="_blank"><img class="imgOverlay" src="images/gramarSmall.png" alt="Elephant"></a>
                         <div>
-                            <h3>Grammar</h3>
+                            <h2>Grammar</h2>
                         </div>
                     </div>
                 </div>

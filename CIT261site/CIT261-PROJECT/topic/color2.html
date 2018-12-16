@@ -47,14 +47,14 @@
                     padding: 10px 20px;
                 }
                 
-                .flex-containerSlide1 {
+                .flex-containerSlide2 {
                     display: flex;
                     flex-wrap: wrap;
                     /* background-color: DodgerBlue; */
                     justify-content: space-around;
                 } 
 
-                .flex-containerSlide1 > div {
+                .flex-containerSlide2 > div {
                     margin: 5px;
                     text-align: center;
                 }
@@ -99,14 +99,154 @@
                     text-align: center;
                 }
                 
+                .icono{
+                    position: relative;
+                    animation-name: greatWell;
+                    animation-duration: 10s;
+                    animation-timing-function: ease-in-out;
+                }
+                
+                @keyframes greatWell {
+                    0%   {left:0px;}
+                    50%  {left:500px;}
+                    100% {left:0px;}
+                }
+                
+                #mainTitle{
+                    -webkit-transition: 3s;
+                    transition: 3s;
+                    transition-delay: 0.3s;
+                    transition-timing-function: ease; /* The speed*/
+                }
+                
+
+                
             </style>
+            
+            <script>
+                function allowDrop(ev) {
+                    ev.preventDefault();
+                  }
+
+                  function drag(ev) {
+                    ev.dataTransfer.setData("text", ev.target.id);
+                  }
+
+                  function drop(ev) {
+                    ev.preventDefault();
+                    var data = ev.dataTransfer.getData("text");
+                    ev.target.appendChild(document.getElementById(data));
+                  }
+              
+                function drop1(ev) {
+                  ev.preventDefault();
+                  var data = ev.dataTransfer.getData("text");
+                  ev.target.appendChild(document.getElementById(data));
+                  
+                  //hide the div element on the left.
+                  document.getElementById("div2").style.display = "none";
+                  document.getElementById("colorGreen").style.background = "red";
+                  document.getElementById("titleColor").style.color = "white";
+                  document.getElementById("colorOrange").style.background = "white";
+                  //document.getElementById("div2").style.visibility = "hidden";
+                
+                  document.getElementById("myBtn").style.background = "white";
+                  document.getElementById("myBtn").style.color = "black";
+                  document.getElementById("myBtn").style.border = "2px solid #008CBA";
+                  enableButton();
+                  transformColor2();
+                }
+  
+                function drop2(ev) {
+                  ev.preventDefault();
+                  var data = ev.dataTransfer.getData("text");
+                  ev.target.appendChild(document.getElementById(data));
+                  
+                    //hide the div element on the left.
+                   document.getElementById("div2").style.display = "none";
+                   document.getElementById("colorOrange").style.background = "#58FA58";
+                   document.getElementById("colorGreen").style.background = "white";
+                   document.getElementById("titleColor").style.color = "blue";
+
+
+                   document.getElementById("myBtn").style.background = "#008CBA";
+                   document.getElementById("myBtn").style.color = "white";
+                   disableButton();
+                 
+                    var elem = document.getElementById("myBar"); 
+                    var width = 20;
+                    var id = setInterval(frame, 10);
+                    function frame() {
+                      if (width >= 100) {
+                        clearInterval(id);
+                      } else {
+                        width++; 
+                        elem.style.width = width + '%'; 
+                        elem.innerHTML = width * 1  + '%';
+                        //key to stop the progress bar
+                        if(width === 60){
+                          width = 100;
+                        }
+                      }
+                    }
+                    
+                    transformColor1();
+                 
+                }
+                
+                function myProgressBar() {
+                    var elem = document.getElementById("myBar"); 
+                    var width = 10;
+                    var id = setInterval(frame, 10);
+                    function frame() {
+                      if (width >= 100) {
+                        clearInterval(id);
+                      } else {
+                        width++; 
+                        elem.style.width = width + '%'; 
+                        elem.innerHTML = width * 1  + '%';
+                        //key to stop the progress bar
+                        if(width === 20){
+                          width = 100;
+                        }
+                      }
+                    }
+                }
+    
+                function makeItElegant(setDiv){
+                    setDiv.style.color = "orange";
+                    setDiv.style.opacity = "0.9";
+                    setDiv.style.fontSize = "3.4rem";
+                }
+                
+                function transformColor1() {
+                    document.getElementById("colorOrange").style.webkitTransition = "2s";
+                    document.getElementById("colorOrange").style.mozTransition = "2s";
+                    document.getElementById("colorOrange").style.msTransition = "2s";
+                    document.getElementById("colorOrange").style.transition = "2s";
+
+                    document.getElementById("colorOrange").style.webkitTransform = "rotateY(360deg)";
+                    document.getElementById("colorOrange").style.mozTransform = "rotateY(360deg)";
+                    document.getElementById("colorOrange").style.msTransform = "rotateY(360deg)";
+                    document.getElementById("colorOrange").style.transform = "rotateY(360deg)";
+                }
+                
+                function transformColor2() {
+                    document.getElementById("colorGreen").style.webkitTransition = "2s";
+                    document.getElementById("colorGreen").style.mozTransition = "2s";
+                    document.getElementById("colorGreen").style.msTransition = "2s";
+                    document.getElementById("colorGreen").style.transition = "2s";
+                }
+                
+                
+            </script>
         </head>
-<body>
+<body onload="myProgressBar()">
 
     <header>
         <div id="mainTop" class="flex-container">
-            <div><img src="../images/elephantSmall.png" alt="Elephant"></div>
-            <div><h1 id="mainTitle">Elephant Memory</h1></div>
+            <div><img class="icono" src="../images/elephantSmall.png" alt="Elephant"></div>
+            <div><h1 id="mainTitle" onmouseover="makeItElegant(this)">Elephant Memory</h1></div>
         </div>
     </header>
     <main class="mainMenu">
@@ -116,29 +256,28 @@
     </div>
 
 
-    <h1 class="topTitle">Selecciona el color <u>ROJO</u></h1>
+        <h1 class="topTitle">Drag and Drop colors on the left over the correct color square.</h1>
  
-
-    <div class="flex-containerSlide1">
-        <div class="polaroid" id="img1">
-            <img class="imgOverlay" onclick="move()" src="images/colors/tomate.jpg" alt="Tomatoes" style="width:100%; height:220px">
-            <div class="container">
-                <h2>RED</h2>
+ 
+    <div class="flex-containerSlide2">
+        <div class="polaroid" id="div2">
+            <div class="container" id="drag2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img draggable="true" ondragstart="drag(event)" id="drag1" class="imgOverlay" onclick="moveToBad2()" src="images/colors/naranja.jpg" alt="Oranges" style="width:100%; height:220px">
             </div>
         </div>
-        <div class="polaroid" id="img2"> 
-            <img  class="imgOverlay" onclick="moveToBad2()" src="images/colors/naranja.jpg" alt="Oranges" style="width:100%; height:220px">
+        <div class="polaroid" id="colorGreen" ondrop="drop1(event)" ondragover="allowDrop(event)"> 
+            <div class="container">
+                <h2 id="titleColor">GREEN</h2>
+            </div>
+        </div>
+        <div class="polaroid" id="colorOrange" ondrop="drop2(event)" ondragover="allowDrop(event)"> 
             <div class="container">
                 <h2>ORANGE</h2>
             </div>
         </div>
-        <div class="polaroid" id="img3">
-            <img class="imgOverlay" onclick="moveToBad3()" src="images/colors/platano.jpg" alt="Bananas" style="width:100%; height:220px">
-            <div class="container">
-                <h2>YELLOW</h2>
-            </div>
-        </div>
     </div>
+    
+    
     <br>
     <button class="button button2" id="myBtn" onclick="move()">Next</button> 
     <!-- <button onclick="move2()">Click Me</button> -->
@@ -251,6 +390,7 @@
             }
           }
         }
+  
     </script>
 </main>
 </body>

@@ -61,4 +61,22 @@ body {
     width: 320px;
 }
 
+.icono{
+    position: relative;
+    animation-name: greatWell;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+}
 
+@keyframes greatWell {
+    0%   {left:0px;}
+    50%  {left:500px;}
+    100% {left:0px;}
+}
+
+#mainTitle{
+    -webkit-transition: 3s;
+    transition: 3s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease; /* The speed*/
+}

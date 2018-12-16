@@ -47,14 +47,14 @@
                     padding: 10px 20px;
                 }
                 
-                .flex-containerSlide2 {
+                .flex-containerSlide1 {
                     display: flex;
                     flex-wrap: wrap;
                     /* background-color: DodgerBlue; */
                     justify-content: space-around;
                 } 
 
-                .flex-containerSlide2 > div {
+                .flex-containerSlide1 > div {
                     margin: 5px;
                     text-align: center;
                 }
@@ -99,58 +99,34 @@
                     text-align: center;
                 }
                 
-                #colorBlue{
-                    background: blue;
+                .icono{
+                    position: relative;
+                    animation-name: greatWell;
+                    animation-duration: 10s;
+                    animation-timing-function: ease-in-out;
                 }
-                #colorYellow{
-                    background: yellow;
+                
+                @keyframes greatWell {
+                    0%   {left:0px;}
+                    50%  {left:500px;}
+                    100% {left:0px;}
                 }
-                #colorGreen{
-                    background: green;
-                }
-                #colorRed{
-                    background: red;
+                
+                #mainTitle{
+                    -webkit-transition: 3s;
+                    transition: 3s;
+                    transition-delay: 0.3s;
+                    transition-timing-function: ease; /* The speed*/
                 }
                 
             </style>
-            
-            <script>
-                function allowDrop(ev) {
-                  ev.preventDefault();
-                }
-
-                function drag(ev) {
-                  ev.dataTransfer.setData("text", ev.target.id);
-                  
-                }
-
-                function drop(ev) {
-                  ev.preventDefault();
-                  var data = ev.dataTransfer.getData("text");
-                  ev.target.appendChild(document.getElementById(data));
-                  
-                  //hide the div element on the left.
-                  document.getElementById("div1").style.visibility = "hidden";
-                  //document.getElementById("div2").style.visibility = "hidden";
-                  //document.getElementById("div3").style.visibility = "hidden";
-                  //document.getElementById("div4").style.visibility = "hidden";
-                }
-                
-                var x = document.getElementById("IsThereText").textContent;
-                x.addEventListener("mouseover", myFunction);
-                if(x !== "BLUE"){
-                   document.getElementById("div1").style.display = "none";
-                }
-                
-                
-            </script>
         </head>
 <body>
 
     <header>
         <div id="mainTop" class="flex-container">
-            <div><img src="../images/elephantSmall.png" alt="Elephant"></div>
-            <div><h1 id="mainTitle">Elephant Memory</h1></div>
+            <div><img class="icono" src="../images/elephantSmall.png" alt="Elephant"></div>
+            <div><h1 id="mainTitle" onmouseover="makeItElegant(this)">Elephant Memory</h1></div>
         </div>
     </header>
     <main class="mainMenu">
@@ -160,62 +136,31 @@
     </div>
 
 
-        <h1 class="topTitle">Drag and Drop colors on the left over the correct color square.</h1>
+    <h1 class="topTitle">Selecciona el color <u>ROJO</u></h1>
  
-    <!-- ONE -->
-    <div class="flex-containerSlide2">
-        <div class="polaroid" id="div1" ondrop="drop(event)">
-            <div class="container" draggable="true" ondragstart="drag(event)" id="drag1">
-                <h2>BLUE</h2>
-            </div>
-        </div>
-        <div class="polaroid" id="colorRed" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-            <div class="container">
-            
-            </div>
-        </div>
-    </div>
-    
-    <!-- TWO -->
-    <div class="flex-containerSlide2">
-        <div class="polaroid" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div class="container" draggable="true" ondragstart="drag(event)" id="drag2">
-                <h2>YELLOW</h2>
-            </div>
-        </div>
-        <div class="polaroid" id="colorGreen" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-            <div class="container">
-            </div>
-        </div>
-    </div>
-    
-    <!-- THREE -->
-    <div class="flex-containerSlide2">
-        <div class="polaroid">
-            <div class="container">
-                <h2>GREEN</h2>
-            </div>
-        </div>
-        <div class="polaroid" id="colorYellow" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-            <div class="container">
-            </div>
-        </div>
-    </div>
-    
-    <!-- FOUR -->
-    <div class="flex-containerSlide2">
-        <div class="polaroid">
+
+    <div class="flex-containerSlide1">
+        <div class="polaroid" id="img1">
+            <img class="imgOverlay" onclick="move()" src="images/colors/tomate.jpg" alt="Tomatoes" style="width:100%; height:220px">
             <div class="container">
                 <h2>RED</h2>
             </div>
         </div>
-        <div class="polaroid" id="colorBlue"  ondrop="drop(event)" ondragover="allowDrop(event)"> 
+        <div class="polaroid" id="img2"> 
+            <img  class="imgOverlay" onclick="moveToBad2()" src="images/colors/naranja.jpg" alt="Oranges" style="width:100%; height:220px">
             <div class="container">
+                <h2>ORANGE</h2>
+            </div>
+        </div>
+        <div class="polaroid" id="img3">
+            <img class="imgOverlay" onclick="moveToBad3()" src="images/colors/platano.jpg" alt="Bananas" style="width:100%; height:220px">
+            <div class="container">
+                <h2>YELLOW</h2>
             </div>
         </div>
     </div>
     <br>
-    <button class="button button2" id="myBtn" onclick="move()">Next</button> 
+    <button class="button button2" id="myBtn" onclick="location.href='color2.html'">Next</button> 
     <!-- <button onclick="move2()">Click Me</button> -->
    
     <script>
@@ -304,7 +249,7 @@
             }
           }
           
-          disableButton()    
+          disableButton();    
         }
 
         function move2() {
@@ -326,6 +271,53 @@
             }
           }
         }
+        
+        document.getElementById("img1").addEventListener("click", transformColor1);
+
+        function transformColor1() {
+ 
+  
+            document.getElementById("img1").style.webkitTransition = "2s";
+            document.getElementById("img1").style.mozTransition = "2s";
+            document.getElementById("img1").style.msTransition = "2s";
+            document.getElementById("img1").style.transition = "2s";
+
+            document.getElementById("img1").style.webkitTransform = "rotateY(360deg)";
+            document.getElementById("img1").style.mozTransform = "rotateY(360deg)";
+            document.getElementById("img1").style.msTransform = "rotateY(360deg)";
+            document.getElementById("img1").style.transform = "rotateY(360deg)";
+        }
+        
+        document.getElementById("img2").addEventListener("click", transformColor2);
+
+        function transformColor2() {
+ 
+  
+            document.getElementById("img2").style.webkitTransition = "2s";
+            document.getElementById("img2").style.mozTransition = "2s";
+            document.getElementById("img2").style.msTransition = "2s";
+            document.getElementById("img2").style.transition = "2s";
+        }
+        
+        
+        document.getElementById("img3").addEventListener("click", transformColor3);
+
+        function transformColor3() {
+ 
+  
+            document.getElementById("img3").style.webkitTransition = "2s";
+            document.getElementById("img3").style.mozTransition = "2s";
+            document.getElementById("img3").style.msTransition = "2s";
+            document.getElementById("img3").style.transition = "2s";
+
+        }
+        
+        function makeItElegant(setDiv){
+            setDiv.style.color = "orange";
+            setDiv.style.opacity = "0.9";
+            setDiv.style.fontSize = "3.4rem";
+        }
+        
     </script>
 </main>
 </body>
